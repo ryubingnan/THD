@@ -1,0 +1,78 @@
+﻿@model EmailVericationDto
+
+@section Styles{
+<style>
+    #main {
+        background-image: url("/imgs/banner8.jpg");
+        width: 100%;
+        height: 560px;
+        max-height: 600px;
+        margin: 0;
+        padding-top: 60px;
+    }
+
+        #main > table {
+            width: 600px;
+            height: 300px;
+            margin-top: 60px;
+            margin-left: 150px;
+            position: absolute;
+            text-align: center;
+        }
+</style>
+}
+
+<div id="main">
+    <table>
+        <tr>
+            <td>
+                @if (!string.IsNullOrWhiteSpace(Model.Error))
+                {
+                    <h4>@Model.Error</h4>
+                }
+                else
+                {
+                    <h4>@Model.UserName ! 恭喜您，邮箱验证成功！</h4>
+                    <h6>{{seconds}} 秒后跳转到首页</h6>
+                }
+            </td>
+        </tr>
+    </table>
+</div>
+
+@section Scripts{
+<script>
+    createVueApp({
+        data(){
+            return {
+                seconds: 0,
+                success: @Html.Raw(Model.Success.ToString().ToLower())
+            }
+        },
+        created() {
+            if(this.success){
+                this.goIndex()
+            }
+        },
+        methods: {
+            goIndex(){
+                const totalSeconds = 5
+                if(!this.timer){
+                    this.seconds = totalSeconds
+                    this.timer = setInterval(() => {
+                        if(this.seconds > 1 && this.seconds <= totalSeconds){
+                            this.seconds--
+                        }
+                        else{
+                            this.seconds--
+                            clearInterval(this.timer)
+                            this.timer = null
+                            location.href = '/'
+                        }
+                    }, 1000)
+                }
+            }
+        }
+    })
+</script>
+}

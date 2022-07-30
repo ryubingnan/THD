@@ -1,0 +1,637 @@
+﻿@{
+    ViewData["Title"] = "株式会社登峰開発";
+}
+<div class="home-wrapper">
+    @*banner*@
+    <div class="banner-swiper" style="width: auto; height: 390px; ">
+        <div class="swiper-wrapper" style="width: auto; height: 390px; ">
+            <div class="swiper-slide">
+                <img class="pc-only" src="~/imgs/home/kv_index_01.jpg" alt="" />
+                <img class="ph-only" src="~/imgs/home/kv_index_01_sp.jpg" alt="" style="width: auto; height: 390px; "/>
+                <div class="link-btn orange">
+                    <a class="link" href="/worker/">ソフト開発</a>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img class="pc-only" src="~/imgs/home/kv_index_02.jpg" alt="" />
+                <img class="ph-only" src="~/imgs/home/kv_index_02_sp.jpg" alt="" style="width: auto; height: 390px; "/>
+                <div class="link-btn orange">
+                    <a class="link" href="#">人材のご紹介</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*注册框*@
+    @using (Html.BeginForm("TechnicianRegister", "Home", FormMethod.Post, new { id = "formSubmit", enctype = "multipart/form-data" }))
+    {
+        <!--<div class="reg-wrapper">
+            <div class="reg-title">
+                <div class="reg-time">簡単1分</div>
+                <div class="reg-reg">無料登録はこちら</div>
+            </div>
+            <hr />
+            <div class="reg-form" id="regNeed">
+                <div class="reg-form-item">
+                    <div class="reg-form-need reg-form-need-yes">必须</div>
+                    <div class="reg-form-lebel">お名前</div>
+                    <div class="reg-form-input">
+                        <input type="text" name="Name" id="Name" placeholder="例え）高山太郎" value="" />
+                        <div class="reg-form-error">お名前を入力してください。</div>
+                    </div>
+                </div>
+                <div class="reg-form-item">
+                    <div class="reg-form-need reg-form-need-yes">必须</div>
+                    <div class="reg-form-lebel">フリガナ</div>
+                    <div class="reg-form-input">
+                        <input type="text" name="Alias" id="Alias" placeholder="例え）タカヤマタロウ" value="" />
+                        <div class="reg-form-error">フリガナを入力してください。</div>
+                    </div>
+                </div>
+                <div class="reg-form-item">
+                    <div class="reg-form-need reg-form-need-yes">必须</div>
+                    <div class="reg-form-lebel">電話番号</div>
+                    <div class="reg-form-input">
+                        <input type="text" name="Phone" id="Phone" placeholder="例え）08012345678" value="" />
+                        <div class="reg-form-error">電話番号を入力してください。</div>
+                    </div>
+                </div>
+                <div class="reg-form-item">
+                    <div class="reg-form-need reg-form-need-yes">必须</div>
+                    <div class="reg-form-lebel">メールアドレス<br>（会员 ID）</div>
+                    <div class="reg-form-input">
+                        <input type="text" name="Email" id="Email" placeholder="例え）sample@sample.jp" value="" />
+                        <div class="reg-form-error">メールアドレス（会員ID）を入力してください。</div>-->
+                        @*<div class="reg-form-tip">如果您设置了接收邮件的域指定接收，请设置为您可以接收来自“freelance.fosternet.jp”的邮件。</div>*@
+                    <!--</div>
+                </div>
+                <div class="reg-form-item">
+                    <div class="reg-form-need reg-form-need-yes">必须</div>
+                    <div class="reg-form-lebel">パスワード</div>
+                    <div class="reg-form-input">
+                        <input type="password" name="Password" id="Password" placeholder="" value="" />
+                        <div class="reg-form-error">パスワードを半角英数字8文字以上で入力してください。</div>-->
+                        @*<div class="reg-form-tip">半角字母数字字符：8 个或更多字符。可用于申请项目和查看申请状态。</div>*@
+                    <!--</div>
+                </div>
+                <div class="reg-form-item">
+                    <div class="reg-form-need reg-form-need-yes">必须</div>
+                    <div class="reg-form-lebel">
+                        ご希望
+                    </div>
+                    <div class="reg-form-input">
+                        <select width name="sel" id="sel">
+                            <option value="0">ご選択</option>
+                            <option value="1">ソフト開発</option>
+                            <option value="2">製品販売</option>
+                            <option value="3">人材派遣</option>
+                            <option value="4">先進技術応援</option>
+                            <option value="5">エンジニア応募</option>
+                            <option value="6">その他</option>
+                        </select>
+                        <div class="reg-form-error">パスワードを半角英数字8文字以上で入力してください。</div>
+                    </div>
+                </div>
+            </div>
+            <div id="regNoNeed" class="reg-form">
+                <div class="reg-form-item">
+                    <div class="reg-form-need">任意</div>
+                    <div class="reg-form-lebel">職務履歴書</div>
+                    <div class="reg-form-input">
+                        <input type="file" name="WorkExperience" id="WorkExperience" />
+                        <div class="reg-form-tip">10M以内のWord、もしくはExcelファイルをアップロードしてください。</div>
+                    </div>
+                </div>
+                <div class="reg-form-item">
+                    <div class="reg-form-need">任意</div>
+                    <div class="reg-form-lebel">ご要望</div>
+                    <div class="reg-form-input">
+                        <textarea name="Ask" id="Ask" placeholder="例え）Web系、上流システム開発、リモートワーク"></textarea>
+                    </div>
+                </div>
+                <div class="reg-form-item">
+                    <div class="reg-form-need">任意</div>
+                    <div class="reg-form-lebel">お知らせメール</div>
+                    <div class="reg-form-input">
+                        <input type="CheckBox" name="hobby" value="1" />受け取る
+                    </div>
+                </div>
+                <div class="reg-form-item">
+                    <div class="reg-form-need">任意</div>
+                    <div class="reg-form-lebel">案件紹介メール</div>
+                    <div class="reg-form-input">
+                        <input type="CheckBox" name="hobby" value="1" />受け取る
+                    </div>
+                </div>
+            </div>
+            <div class="reg-terms">
+                <p>上記の必要事項をご入力ください。履歴書をお持ちの方が「技術者履歴書」を押して、履歴書添付してください。</p>
+                <p>ご登録には“<a href="#" style="color: #0094ff">利用規約</a>”に確認頂く必要がございます。</p>
+            </div>
+            <div class="reg-btns">
+                <button id="regBtn1">技術者募集</button>
+                <button id="regBtn2">送信</button>
+            </div>
+        </div>-->
+    }
+   
+    
+@*hr种类*@
+    <div class="hr-type-wrapper">
+        <div class="content-inner">
+            <div class="hr-type-box">
+                <div class="hr-type-title">お客さまの発展のために共に歩み、お客さまと共に社会課題の解決に貢献してまいります。</div>
+                <div class="hr-type-flex">
+                    <div class="hr-type-item">
+                        <a href="/Dispatch/">
+                            <div class="hr-type-item-title">
+                                <p class="hr-type-item-title-main">人材派遣</p>
+                                <p class="hr-type-item-title-sub">システムエンジニアリングサービス（SES）</p>
+                            </div>
+                            <div class="hr-type-info">
+                                <img class="pc-only" src="/imgs/home/pht_index_list_04.jpg" alt="">
+                                <img class="ph-only" src="/imgs/home/pht_index_list_04_sp.jpg" alt="">
+                                <div class="hr-type-text">
+                                    お客様のご要望にマッチした人材で上流から下流まで幅広く支援します。
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="hr-type-item">
+                        <a href="/Sale/">
+                            <div class="hr-type-item-title">
+                                <p class="hr-type-item-title-main">製品販売</p>
+                                <p class="hr-type-item-title-sub">多様な業種対応し、業務の正確性と効率化を実現します。</p>
+                            </div>
+                            <div class="hr-type-info">
+                                <img class="pc-only" src="/imgs/home/pht_index_list_01.jpg" alt="">
+                                <img class="ph-only" src="/imgs/home/pht_index_list_01_sp.jpg" alt="">
+                                <div class="hr-type-text">卸売業、サービス業を中心に様々な業種・業態の販売管理業務に対応しています。</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="hr-type-item">
+                        <a href="/Soft/">
+                            <div class="hr-type-item-title">
+                                <p class="hr-type-item-title-main">ソフト開発</p>
+                                <p class="hr-type-item-title-sub">通信制御系、業務系システム、Web系、APP系の開発</p>
+                            </div>
+                            <div class="hr-type-info">
+                                <img class="pc-only" src="/imgs/home/pht_index_list_03.jpg" alt="">
+                                <img class="ph-only" src="/imgs/home/pht_index_list_03_sp.jpg" alt="">
+                                <div class="hr-type-text">新しい事業分野においても、常に社会に必要とされ続ける企業でありたいと願っています。</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="hr-type-item">
+                        <a href="/Technology/">
+                            <div class="hr-type-item-title">
+                                <p class="hr-type-item-title-main">先進技術応援</p>
+                                <p class="hr-type-item-title-sub">Iot、ビックデータ、顔認識、AIなど</p>
+                            </div>
+                            <div class="hr-type-info">
+                                <img class="pc-only" src="/imgs/home/pht_index_list_02.jpg" alt="">
+                                <img class="ph-only" src="/imgs/home/pht_index_list_02_sp.jpg" alt="">
+                                <div class="hr-type-text">Iot、ビッグデータやAIはこれからの社会に欠かせませんので、精一杯技術を応援します。</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*关于我们*@
+    <div class="about-us-wrapper">
+        <div class="content-inner">
+            <div class="about-us-box">
+                <div class="about-us-title1">私たちに関しては</div>
+                <div class="about-us-title2">経営理念：</div>
+                <div class="about-us-title3">
+                    お客様に合った多様な職種、多様な働き方をご提案します。
+                </div>
+                <div class="about-us-text">お客様の課題を解決したい想いと行動が、絶えない成長と挑戦へと続き、御社のライフスタイルにあったプランをご提案します。</div>
+                <div class="link-btn black">
+                    <a class="link" href="#">プランの紹介</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*工作种类*@
+    <!--<div class="job-search-wrapper">
+        <div class="job-search-box">
+            <div class="job-search-box">
+                <div class="job-search-title">
+                    <p>仕事を見つける</p>
+                    <i>仕事を見つける/仕事を見つける</i>
+                    <b>テーブルを軽くたたく</b>
+                </div>
+
+                <div class="job-search-tab-btns">
+                    <div id="office" class="job-search-tab-btn active">オフィスワーク</div>
+                    <div id="it" class="job-search-tab-btn">ITの仕事</div>
+                </div>
+                <div id="office-box" class="search-tab-box">
+                    <div class="tab-box-title">
+                        <b>オフィスエンジニア</b> エンジニア紹介
+                    </div>
+                    <div class="search-by-box">
+                        <div class="search-by-title">
+                            <img src="~/imgs/home/icon_index_area.png" alt="Alternate Text" />
+                            <span>エリアで検索</span>
+                        </div>
+                        <div class="area-list">
+                            <div class="area-item">
+                                <div class="area-title">関東</div>
+                                <div class="area-item-list">
+                                    <div class="area-item-li">
+                                        <a href="#">東京</a>
+                                    </div>
+                                    <div class="area-item-li">
+                                        <a href="#">東京</a>
+                                    </div>
+                                    <div class="area-item-li">
+                                        <a href="#">東京</a>
+                                    </div>
+                                    <div class="area-item-li">
+                                        <a href="#">東京</a>
+                                    </div>
+                                    <div class="area-item-li">
+                                        <a href="#">東京</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="area-item">
+                                <div class="area-title">関東</div>
+                                <div class="area-item-list">
+                                    <div class="area-item-li">
+                                        <a href="#">東京</a>
+                                    </div>
+                                    <div class="area-item-li">
+                                        <a href="#">東京</a>
+                                    </div>
+                                    <div class="area-item-li">
+                                        <a href="#">東京</a>
+                                    </div>
+                                    <div class="area-item-li">
+                                        <a href="#">東京</a>
+                                    </div>
+                                    <div class="area-item-li">
+                                        <a href="#">東京</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="area-item">
+                                <div class="area-title">関東</div>
+                                <div class="area-item-list">
+                                    <div class="area-item-li">
+                                        <a href="#">東京</a>
+                                    </div>
+                                    <div class="area-item-li">
+                                        <a href="#">東京</a>
+                                    </div>
+                                    <div class="area-item-li">
+                                        <a href="#">東京</a>
+                                    </div>
+                                    <div class="area-item-li">
+                                        <a href="#">東京</a>
+                                    </div>
+                                    <div class="area-item-li">
+                                        <a href="#">東京</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="search-by-box">
+                        <div class="search-by-title">
+                            <img src="~/imgs/home/icon_index_occupation.png" alt="Alternate Text" />
+                            <span>職業で検索</span>
+                        </div>
+                        <div class="occu-list">
+                            <div class="occu-item">
+                                <a href="#">一般的な仕事</a>
+                            </div>
+                            <div class="occu-item">
+                                <a href="#">サービス産業</a>
+                            </div>
+                            <div class="occu-item">
+                                <a href="#">ファイナンス</a>
+                            </div>
+                            <div class="occu-item">
+                                <a href="#">徴収</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="search-by-box">
+                        <div class="search-by-title">
+                            <img src="~/imgs/home/icon_index_kodawari.png" alt="Alternate Text" />
+                            <span>特定の検索</span>
+                        </div>
+                        <div class="condition-list">
+                            <div class="condition-item">
+                                <a href="#">経験なし</a>
+                            </div>
+                            <div class="condition-item">
+                                <a href="#">家族の仕事</a>
+                            </div>
+                            <div class="condition-item">
+                                <a href="#">部屋と板</a>
+                            </div>
+                            <div class="condition-item">
+                                <a href="#">シャトルがあります</a>
+                            </div>
+                            <div class="condition-item">
+                                <a href="#">シャトルがあります</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="search-by-box">
+                        <div class="search-by-title">
+                            <img src="~/imgs/home/icon_index_feature.png" alt="Alternate Text" />
+                            <span>特別な仕事</span>
+                        </div>
+                        <div class="feature-list">
+                            <div class="feature-item">
+                                <a href="#">
+                                    <img src="~/imgs/home/icon_index_feature_07.png" alt="Alternate Text" />
+                                    <p>貿易慣行</p>
+                                </a>
+                            </div>
+                            <div class="feature-item">
+                                <a href="#">
+                                    <img src="~/imgs/home/icon_index_feature_07.png" alt="Alternate Text" />
+                                    <p>システム開発</p>
+                                </a>
+                            </div>
+                            <div class="feature-item">
+                                <a href="#">
+                                    <img src="~/imgs/home/icon_index_feature_07.png" alt="Alternate Text" />
+                                    <p>建築デザイン</p>
+                                </a>
+                            </div>
+                            <div class="feature-item">
+                                <a href="#">
+                                    <img src="~/imgs/home/icon_index_feature_07.png" alt="Alternate Text" />
+                                    <p>配布</p>
+                                </a>
+                            </div>
+                            <div class="feature-item">
+                                <a href="#">
+                                    <img src="~/imgs/home/icon_index_feature_07.png" alt="Alternate Text" />
+                                    <p>AI</p>
+                                </a>
+                            </div>
+                            <div class="feature-item">
+                                <a href="#">
+                                    <img src="~/imgs/home/icon_index_feature_07.png" alt="Alternate Text" />
+                                    <p>人工知能</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="it-box" class="search-tab-box" style="display: none;">
+                    id
+                </div>
+            </div>
+        </div>
+    </div>-->
+    @*新闻*@
+    <!--<div class="news-wrapper">
+        <div class="content-inner">
+            <div class="news-box">
+                <div class="news-big-title">News</div>
+                <div class="news-list">
+                    <div class="news-item">
+                        <a href="#" class="news-link">
+                            <div class="news-date">2022/02/03</div>
+                            <div class="news-tag">出版物</div>
+                            <div class="news-info">電子ビジネスプラットフォーム</div>
+                        </a>
+                    </div>
+                    <div class="news-item">
+                        <a href="#" class="news-link">
+                            <div class="news-date">2022/02/03</div>
+                            <div class="news-tag">出版物</div>
+                            <div class="news-info">旅行ウェブサイト</div>
+                        </a>
+                    </div>
+                    <div class="news-item">
+                        <a href="#" class="news-link">
+                            <div class="news-date">2022/02/03</div>
+                            <div class="news-tag">出版物</div>
+                            <div class="news-info">出会い系サイト</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>-->
+
+    @*消息*@
+    <div class="relation-wrapper">
+            <div class="content-inner">
+                <div class="relation-box">
+                    <div class="relation-title">リンク</div>
+                    <div class="relation-list">
+                        <div class="relation-item">
+                            <a href="/Corporate/outline/" class="relation-link">
+                                <img src="/imgs/home/bnr_index_relation_01.jpg" alt="">
+                                <p class="relation-info">
+                                    企業情報
+                                </p>
+                            </a>
+                        </div>
+                        <div class="relation-item">
+                            <a href="/Account/Login/" class="relation-link">
+                                <img src="/imgs/home/bnr_index_relation_02.jpg" alt="">
+                                <p class="relation-info">
+                                    会員ログイン
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/swiper/swiper.min.js"></script>
+    <script>
+        var bannerSwiper = new Swiper('.banner-swiper', {
+            loop: true,
+            autoplay: true
+        })
+        $('.job-search-tab-btn').click(function () {
+            $(this).addClass('active').siblings().removeClass('active');
+            if ($(this).attr('id') == 'office') {
+                $('#office-box').show();
+                $('#it-box').hide();
+            } else {
+                $('#office-box').hide();
+                $('#it-box').show();
+            }
+        })
+
+        $(document).ready(function () {
+            //$("#Name").focus();
+        });
+
+        //注册
+        var needForm = true;
+        var isReady = false;
+        $('#regBtn1').click(function () {
+            if (needForm) {
+                $('#regTip').hide();
+                $('#regNeed').hide();
+                $('#regNoNeed').show();
+                $('#regBtn1').text('必須項目にご入力ください。');
+            } else {
+                $('#regTip').show();
+                $('#regNeed').show();
+                $('#regNoNeed').hide();
+                $('#regBtn1').text('履歴書を添付してください。');
+            }
+            needForm = !needForm;
+            return false;
+        })
+
+        $('#regBtn2').click(function () {
+            $('#regTip').show();
+            $('#regNeed').show();
+            $('#regNoNeed').hide();
+            needForm = true;
+
+            var v1 = checkForm();
+            var v2 = checkAlias();
+            var v3 = checkPhone();
+            var v4 = checkEmail();
+            var v5 = checkPwd();
+            var v6 = checkSel();
+
+            var isvalid = v1 && v2 && v3 && v4 && v5 && v6;
+            return isvalid;
+
+            //if (isReady) {
+            //    $('#formSubmit').submit();
+            //} else {
+            //    alert(2)
+            //}
+            //isReady && $('#formSubmit').submit();
+        })
+
+        function checkForm() {
+            return checkName();
+        }
+
+        //input判断
+        $('#Name').blur(function () { // 用户名
+            return checkName();
+        })
+        $('#Alias').blur(function () { // 别名
+            return checkAlias();
+        })
+        $('#Phone').blur(function () { // 电话
+            return checkPhone();
+        })
+        $('#Email').blur(function () { // 邮箱
+            return checkEmail();
+        })
+        $('#Password').blur(function () { // 密码
+            return checkPwd();
+        })
+
+        function checkName() {
+            var val = $("#Name").val();
+            var tip = $("#Name").next('.reg-form-error');
+            if (!val) {
+                tip.text('お名前をご入力ください。').css('visibility', 'visible');
+                isReady = false;
+            } else {
+                if (val.length < 3) {
+                    tip.text('最小値が3桁です。').css('visibility', 'visible');
+                    isReady = false;
+                } else {
+                    tip.css('visibility', 'hidden');
+                    isReady = true;
+                }
+            }
+            return isReady;
+        }
+        function checkAlias() {
+            var val = $('#Alias').val();
+            var tip = $('#Alias').next('.reg-form-error');
+            if (!val) {
+                tip.text('カタカナをご入力ください。').css('visibility', 'visible');
+                isReady = false;
+            } else {
+                if (val.length < 3) {
+                    tip.text('最小値が3桁です。').css('visibility', 'visible');
+                    isReady = false;
+                } else {
+                    tip.css('visibility', 'hidden');
+                    isReady = true;
+                }
+            }
+            return isReady;
+        }
+
+        function checkPhone() {
+            var val = $('#Phone').val();
+            var tip = $('#Phone').next('.reg-form-error');
+            if (!val) {
+                tip.text('電話番号をご入力ください。').css('visibility', 'visible');
+                isReady = false;
+            } else {
+                tip.css('visibility', 'hidden');
+                isReady = true;
+            }
+            return isReady;
+        }
+
+        function checkEmail() {
+            var val = $('#Email').val();
+            var tip = $('#Email').next('.reg-form-error');
+            if (!val) {
+                tip.text('メールアドレスをご入力ください。').css('visibility', 'visible');
+                isReady = false;
+            } else {
+                tip.css('visibility', 'hidden');
+                isReady = true;
+            }
+            return isReady;
+        }
+
+        function checkPwd() {
+            var val = $('#Password').val();
+            var tip = $('#Password').next('.reg-form-error');
+            if (!val) {
+                tip.text('パスワードをご入力ください。').css('visibility', 'visible');
+                isReady = false;
+            } else {
+                if (val.length < 8) {
+                    tip.text('最小値が8桁です。').css('visibility', 'visible');
+                    isReady = false;
+                } else {
+                    tip.css('visibility', 'hidden');
+                    isReady = true;
+                }
+            }
+            return isReady;
+        }
+
+        function checkSel() {
+            var val = $('#sel').val();
+            var tip = $('#sel').next('.reg-form-error');
+            if (val == "0") {
+                tip.text('ご選択ください。').css('visibility', 'visible');
+                isReady = false;
+            } else {
+                tip.css('visibility', 'hidden');
+                isReady = true;
+            }
+            return isReady;
+        }
+    </script>

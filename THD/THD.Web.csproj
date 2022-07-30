@@ -1,0 +1,77 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <CopyRefAssembliesToPublishDirectory>false</CopyRefAssembliesToPublishDirectory>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Microsoft\**" />
+    <Compile Remove="wwwroot\img\corporate\新文件夹\**" />
+    <Content Remove="Microsoft\**" />
+    <Content Remove="wwwroot\img\corporate\新文件夹\**" />
+    <EmbeddedResource Remove="Microsoft\**" />
+    <EmbeddedResource Remove="wwwroot\img\corporate\新文件夹\**" />
+    <None Remove="Microsoft\**" />
+    <None Remove="wwwroot\img\corporate\新文件夹\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\HomeController1.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\lib\jquery\dist\JavaScript.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+    <PackageReference Include="FluentEmail.Razor" Version="3.0.0" />
+    <PackageReference Include="FluentEmail.Smtp" Version="3.0.0" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="10.3.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.11">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\THD.DataAccess\THD.DataAccess.csproj" />
+    <ProjectReference Include="..\THD.Service\THD.Service.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\fonts\glyphicons-halflings-regular.svg" />
+    <None Include="wwwroot\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="wwwroot\video\house1.mp4" />
+    <None Include="wwwroot\video\job1.mp4" />
+    <None Include="wwwroot\video\love1.mp4" />
+    <None Include="wwwroot\video\service1.mp4" />
+    <None Include="wwwroot\video\shop1.mp4" />
+    <None Include="wwwroot\video\shop2.mp4" />
+    <None Include="wwwroot\video\shop3.mp4" />
+    <None Include="wwwroot\video\stay1.mp4" />
+    <None Include="wwwroot\video\ticket1.mp4" />
+    <None Include="wwwroot\video\trip1.mp4" />
+    <None Include="wwwroot\video\trip2.mp4" />
+    <None Include="wwwroot\video\trip3.mp4" />
+    <None Include="wwwroot\video\trip4.mp4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="wwwroot\templates\EmailVerification.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\templates\PayInfoEmailTemp.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\img\company\" />
+  </ItemGroup>
+
+</Project>

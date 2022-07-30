@@ -1,0 +1,303 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="author" content="登峰開発株式会社">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>【個人のお客さま】お問い合わせフォーム：入力内容確認画面 ｜IT・機電エンジニアの派遣求人なら登峰開発</title>
+
+
+
+    <meta http-equiv="Cache-Control" content="no-store">
+
+    <meta name="apple-mobile-web-app-title" content="登峰開発のエンジニア派遣">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="apple-touch-icon" href="/static/img/icon.png">
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+
+    <script src="/static/js/libs.js"></script>
+
+</head>
+<body marginwidth="0" marginheight="0" leftmargin="0" topmargin="0">
+
+
+
+    <div class="l-header l-header--simple">
+        <div class="l-header__inner">
+            <div class="l-header__left">
+                <a class="l-header__img p-logo-header" href="/">
+                    <img class="p-logo__img" src="/static/img/common/icon_logo_01.svg" alt="登峰開発">
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="l-visual-simple2">
+        <div class="l-visual-simple2__inner">
+            <div class="l-visual-simple2__heading">
+                <h1 class="l-visual-simple2__text">入力内容確認</h1>
+            </div>
+        </div>
+    </div>
+    <div class="l-content-wrapper">
+        <!-- start page unique -->
+        <div class="l-single">
+            <div class="l-single__inner">
+                <div class="p-section--lv1">
+                    <div class="p-section--lv2">
+                        <div class="p-form-progress">
+                            <ul class="p-form-progress__list">
+                                <li class="p-form-progress__item">
+                                    入力
+                                </li>
+                                <li class="p-form-progress__item is-current">
+                                    確認
+                                </li>
+                                <li class="p-form-progress__item">
+                                    完了
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="p-form-message">
+                            <p class="p-form-message__text">
+                                下記の内容でよろしければ、「送信する」ボタンを押してください。<br>
+                                内容を修正する場合は、「修正する」ボタンを押し、再度ご記入ください。
+                            </p>
+                        </div>
+
+
+
+
+
+
+
+
+
+                        <form name="form1" class="common" action="/post.jsp" method="post">
+
+                            <input type="hidden" name="redirect" value="/form/contact/complete.html">
+                            <input type="hidden" name="redirect_invalid" value="/error/sorry.html">
+                            <input type="hidden" name="formTitle" value="【個人のお客さま】お問い合わせフォーム">
+
+                            <!-- 管理者への確認メール -->
+                            <input type="hidden" name="Aentry_mail" value="">
+                            <input type="hidden" name="entry_page" value="56392">
+
+                            <!-- 管理者への確認メールを送信する場合「yes」 -->
+                            <input value="yes" type="hidden" name="email_notification" />
+                            <!-- 管理者への確認メールのテンプレート指定 -->
+                            <input value="56392" type="hidden" name="email_template" />
+
+                            <!-- 入力者へのサンキューメール -->
+                            <!-- 入力者のメールアドレス -->
+                            <!-- Areply_mail の名前の入力欄 -->
+                            <input type="hidden" name="reply_page" value="21686">
+
+                            <!-- サンキューメールのテンプレート指定 -->
+                            <input type="hidden" value="21686" name="email_confirmation" />
+                            <!-- サンキューメールの宛先 -->
+                            <input type="hidden" value="123456@163.com" name="input_mail_address" />
+                            <input type="hidden" value="input_mail_address" name="email_confirmation_to" />
+
+
+                            <div class="p-form p-form--confirm">
+                                <table class="p-form__table">
+                                    <tbody>
+                                        <tr class="p-form__row">
+                                            <!--お問い合わせ内容-->
+                                            <th class="p-form__heading">
+                                                お問い合わせ内容
+                                                <input type="hidden" name="Q6" value="お問い合わせ内容">
+                                            </th>
+                                            <td class="p-form__contents">
+                                                <p>その他お問い合わせ（個人のお客様）</p>
+                                                <input type="hidden" name="A6" value="その他お問い合わせ（個人のお客様）">
+                                            </td>
+                                        </tr>
+
+
+
+
+
+
+
+
+                                        <input type="hidden" name="database" value="TOJAFormCustomer">
+                                        <input type="hidden" value="engineer-techstaff@persol.co.jp" name="email_confirmation_from" />
+                                        <input type="hidden" value="engineer-techstaff@persol.co.jp" name="email_notification_from" />
+                                        <input type="hidden" value="engineer-techstaff@persol.co.jp" name="email_notification_to" />
+
+
+                                        <tr class="p-form__row">
+                                            <!--名前-->
+                                            <th class="p-form__heading">
+                                                お名前
+                                                <input type="hidden" name="Q1" value="お名前">
+                                            </th>
+                                            <td class="p-form__contents">
+                                                <p>liu123</p>
+                                                <input type="hidden" name="A1" value="liu123">
+                                                <input type="hidden" name="A1_1" value="liu">
+                                                <input type="hidden" name="A1_2" value="123">
+                                            </td>
+                                        </tr>
+                                        <tr class="p-form__row">
+                                            <!--フリガナ-->
+                                            <th class="p-form__heading">
+                                                フリガナ
+                                                <input type="hidden" name="Q2" value="フリガナ">
+                                            </th>
+                                            <td class="p-form__contents">
+                                                <p>タカヤマメイウ</p>
+                                                <input type="hidden" name="A2" value="タカヤマメイウ">
+                                                <input type="hidden" name="A2_1" value="タカヤマ">
+                                                <input type="hidden" name="A2_2" value="メイウ">
+                                            </td>
+                                        </tr>
+                                        <tr class="p-form__row">
+                                            <!--生年月日-->
+                                            <th class="p-form__heading">
+                                                生年月日
+                                                <input type="hidden" name="Q3" value="生年月日">
+                                            </th>
+                                            <td class="p-form__contents">
+                                                <p>2002/3/12</p>
+                                                <input type="hidden" name="A3" value="2002/3/12">
+                                                <input type="hidden" name="A3_1" value="2002">
+                                                <input type="hidden" name="A3_2" value="3">
+                                                <input type="hidden" name="A3_3" value="12">
+                                            </td>
+                                        </tr>
+                                        <tr class="p-form__row">
+                                            <!--電話番号-->
+                                            <th class="p-form__heading">
+                                                電話番号
+                                                <input type="hidden" name="Q4" value="電話番号">
+                                            </th>
+                                            <td class="p-form__contents">
+                                                <p>01234567890</p>
+                                                <input type="hidden" name="A4" value="01234567890">
+                                            </td>
+                                        </tr>
+                                        <tr class="p-form__row">
+                                            <!--email-->
+                                            <th class="p-form__heading">
+                                                E-mail
+                                                <input type="hidden" name="Qreply_mail" value="E-mail">
+                                            </th>
+                                            <td class="p-form__contents">
+                                                <p>123456@163.com</p>
+                                                <input type="hidden" name="Areply_mail" value="123456@163.com">
+                                            </td>
+                                        </tr>
+
+
+
+
+
+                                        <tr class="p-form__row">
+                                            <!--テキストエリア-->
+                                            <th class="p-form__heading">
+                                                お問い合わせ内容
+                                                <input type="hidden" name="Q5" value="お問い合わせ内容">
+                                            </th>
+                                            <td class="p-form__contents">
+                                                <p>eqeqrqwrqwrqrqwr</p>
+                                                <input type="hidden" name="A5" value="eqeqrqwrqwrqrqwr">
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <div class="p-form__bottom">
+                                    <div class="p-form__action p-form__action--flex">
+                                        <p class="p-form__button">
+                                            <input type="submit" id="clear" name="clear" value="修正する" class="c-button c-button--white" onClick="
+                        form.action='/form/contact/';
+                        onReturn();">
+                                        </p>
+                                        <p class="p-form__button">
+                                            <input type="submit" id="ok" name="ok" value="送信する" class="c-button c-button--orange">
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end page unique -->
+    </div>
+
+    @*<div class="l-footer-simple">
+        <a class="p-page-top" href="#"></a>
+        <div class="l-footer-simple__inner">
+            <div class="p-footer-simple">
+                <div class="p-footer-simple__left">
+                    <ul class="p-footer-utility">
+                        <li class="p-footer-utility__item">
+                            <a class="p-footer-utility__link" href="/corporate/personal/" target="_blank">個人情報保護方針</a>
+                        </li>
+                        <li class="p-footer-utility__item">
+                            <a class="p-footer-utility__link" href="/corporate/privacy/" target="_blank">個人情報の取り扱いについて</a>
+                        </li>
+                        <li class="p-footer-utility__item">
+                            <a class="p-footer-utility__link" href="/corporate/policy/" target="_blank">情報セキュリティ基本方針</a>
+                        </li>
+                        <li class="p-footer-utility__item">
+                            <a class="p-footer-utility__link" href="/info/kiyaku.html" target="_blank">人材派遣サービス利用規約</a>
+                        </li>
+                        <li class="p-footer-utility__item p-footer-utility__item--wide">
+                            <a class="p-footer-utility__link" href="/corporate/woman/" target="_blank">女性活躍推進法及び次世代育成支援対策推進法への取り組み</a>
+                        </li>
+                        <li class="p-footer-utility__item p-footer-utility__item--wide">
+                            <a class="p-footer-utility__link" href="/info/terms-of-use.html" target="_blank">サイトのご利用にあたって</a>
+                        </li>
+                        <li class="p-footer-utility__item p-footer-utility__item--wide">
+                            <a class="p-footer-utility__link" href="/corporate/disclosure/" target="_blank">労働者派遣法に基づく派遣事業の情報</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="p-footer-simple__right u-use--pc">
+                    <ul class="p-footer-marks">
+                        <li class="p-footer-marks__item">
+                            <a class="p-footer-marks__link" href="http://www.jassa.jp/association/special_bk/009/index.html"
+                               target="_blank">
+                                <img class="p-footer-marks__img" src="/static/img/common/img_jassa_staff.gif"
+                                     alt="労働者派遣事業の適正な運営に向けて（2008）JASSA">
+                            </a>
+                        </li>
+                        <li class="p-footer-marks__item">
+                            <a class="p-footer-marks__link" href="https://privacymark.jp/" target="_blank">
+                                <img class="p-footer-marks__img" src="/static/img/common/img_privacy.gif" alt="プライバシーマーク">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="l-footer__copy">
+            <div class="p-footer-copy">
+                <div class="p-footer-copy__contents">
+                    <div class="p-footer-copy__left">
+                        <a href="https://www.persol-group.co.jp/" class="p-footer-copy__link" target="_blank">
+                            <img class="p-footer-copy__logo" src="/static/img/common/icon_logo_02.svg" alt="PERSOL">
+                        </a>
+                    </div>
+                    <div class="p-footer-copy__right">
+                        <img class="p-footer-copy__img" src="/static/img/common/icon_vision.svg" alt="はたらいて、笑おう。">
+                    </div>
+                </div>
+                <p class="p-copy">&copy;PERSOL TECHNOLOGY STAFF CO.,LTD.</p>
+            </div>
+        </div>
+    </div>*@
+
+</body>
+</html>

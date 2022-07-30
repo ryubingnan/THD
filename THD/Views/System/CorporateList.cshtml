@@ -1,0 +1,153 @@
+﻿@{
+    ViewData["Title"] = "お問合せ管理";
+}
+
+<div class="MyRoomAddDiv" style="margin-top:50px">
+    <table>
+        <tr>
+            <td>お問い合わせ内容：</td>
+            <td><input class="form-control" type="text" v-model="iptContentsofInquiry" /></td>
+            <td>
+                <input type="button" class="ic_shoulei hide_txt png btn btn-primary btn-lg btnShoppingCart" value="查询" @@click="handleGetCorporates" />
+                <input type="button" class="ic_shoulei hide_txt png btn btn-primary btn-lg btnShoppingCart" value="清空" @@click="handleClear" />
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="listTop">
+
+    <table>
+        <tbody v-for="(corporate, i) in corporates">
+            <tr>
+                <td colspan="6" style="text-align: left;">
+                    <span style="border: 1px solid #666666; margin: 15px; font-size: 12px; color: #666666; padding: 2px; width: 30%;">お問い合わせ内容</span>{{corporate.contentsofInquiry}}
+                    <span style="border: 1px solid #666666; margin: 15px; font-size: 12px; color: #666666; padding: 2px; width: 30%;">お名前</span>{{corporate.firstName + corporate.lastName}}
+                    <span style="border: 1px solid #666666; margin: 15px; font-size: 12px; color: #666666; padding: 2px; width: 30%;">フリガナ</span>{{corporate.surname + corporate.mei}}
+                    <span style="border: 1px solid #666666; margin: 15px; font-size: 12px; color: #666666; padding: 2px; width: 30%;">生年月日</span>{{corporate.birthDate}}
+                </td>
+            </tr>
+            <tr>
+                <td colspan="6" style="text-align: center; width: 200px; vertical-align: middle;">
+                    <span>
+                        <input type="button" class="btn btn-primary" @@click="handleDetail(corporate)" value="详细">
+                    </span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table border="0">
+        <tr>
+            <td colspan="5" style="border-bottom:0px !important">
+                <el-pagination v-model:current-page="pagination.pageIndex"
+                               :page-sizes="[12, 24, 36]"
+                               v-model:page-size="pagination.pageSize"
+                               layout="total, sizes, prev, pager, next, jumper"
+                               :total="pagination.totalCount"
+                               @@size-change="handleGetCorporates"
+                               @@current-change="handleGetCorporates">
+                </el-pagination>
+            </td>
+        </tr>
+    </table>
+</div>
+<el-dialog v-model="ensureDialogVisible"
+           title="お問合せ详细信息">
+    <el-form :model="registerForm"
+             status-icon
+             label-width="120px"
+             class="ensure-form">
+        <el-form-item label="お問い合わせ内容：">
+            {{registerForm.contentsofInquiry}}
+        </el-form-item>
+        <el-form-item label="お名前：">
+            {{registerForm.firstName + registerForm.lastName}}
+        </el-form-item>
+        <el-form-item label="フリガナ：">
+            {{registerForm.surname + registerForm.mei}}
+        </el-form-item>
+        <el-form-item label="生年月日：">
+            {{registerForm.birthDate}}
+        </el-form-item>
+        <el-form-item label="電話番号：">
+            {{registerForm.phone}}
+        </el-form-item>
+        <el-form-item label="E-mail：">
+            {{registerForm.email}}
+        </el-form-item>
+        <el-form-item label="エラーコード：">
+            {{registerForm.errorCode}}
+        </el-form-item>
+        <el-form-item label="案件番号：">
+            {{registerForm.proposalNumber}}
+        </el-form-item>
+        <el-form-item label="お問い合わせ内容：">
+            <textarea class="c-textarea">{{registerForm.content}}</textarea>
+        </el-form-item>
+    </el-form>
+    <template #footer>
+        <span class="dialog-footer">
+            <el-button @@click="ensureDialogVisible = false">关闭</el-button>
+        </span>
+    </template>
+</el-dialog>
+
+@section Scripts{
+
+    <script>
+        createVueApp({
+            /*返回行程数据*/
+            data() {
+                return {
+                    corporates: [],
+                    pagination: {
+                        pageIndex: 1,
+                        pageSize: 12,
+                        totalCount: 0,
+                    },
+                    iptContentsofInquiry: '',
+                    ensureDialogVisible: false,
+                    registerForm: {}
+                }
+            },
+            /*页面加载完成后回调下方的行程列表方法*/
+            mounted() {
+                this.handleGetCorporates();
+            },
+            /*获取行程列表*/
+            methods: {
+                handleGetCorporates() {
+                    this.pagination.ContentsofInquiry = this.iptContentsofInquiry
+                    this.getCorporates(this.pagination).then(res => {
+                        this.corporates = res.items
+                        this.pagination.totalCount = res.totalCount
+                    })
+                },
+                /*发送请求*/
+                getCorporates(pagination) {
+                    return this.$http.post('/System/GetCorporateList', pagination)
+                },
+                handleClear() {
+                    this.iptContentsofInquiry = ''
+                },
+                handleDelete(id) {
+                    this.$http.post('/system/deleteCorporate', id).then(res => {
+                        if (res) {
+                            this.handleGetCorporates()
+                        } else {
+                            this.$message({
+                                message: '删除失败',
+                                type: 'error'
+                            });
+                        }
+                    })
+                },
+                handleDetail(row) {
+                    this.ensureDialogVisible = true
+                    this.registerForm = row
+                }
+            }
+        })
+
+    </script>
+}

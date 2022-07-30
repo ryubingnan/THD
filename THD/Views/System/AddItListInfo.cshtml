@@ -1,0 +1,257 @@
+﻿@{
+    ViewData["Title"] = "案件管理 > 案件掲載";
+}
+
+<div class="MyRoomAddDiv">
+    <p>■案件掲載</p>
+    <form id="theform" enctype="multipart/form-data" method="post">
+        <table>
+            <tr>
+                <td>案件名</td>
+                <td colspan="2">
+                    <input v-model="tour.Title" class="form-control" placeholder="例）会計パッケージ導入コンサルタント" />
+                </td>
+            </tr>
+            <tr>
+                <td>契約期間</td>
+                <td colspan="2">
+                    <input v-model="tour.Period" class="form-control" placeholder="例）2022年10月01日 〜 2023年03月31日 ※継続の可能性あり" />
+                </td>
+            </tr>
+            <tr>
+                <td>作業場所</td>
+                <td colspan="2">
+                    <input v-model="tour.Area" class="form-control" placeholder="例）東京都" />
+                </td>
+            </tr>
+            <tr>
+                <td>契約形態</td>
+                <td colspan="2">
+                    <el-select v-model="tour.Type">
+                        <el-option v-for="item in selectOptions"
+                                   :key="item.value"
+                                   :label="item.label"
+                                   :value="item.value">
+                        </el-option>
+                    </el-select>
+                </td>
+            </tr>
+            <tr>
+                <td>月額単価</td>
+                <td colspan="2">
+                    <input v-model="tour.Price" class="form-control" placeholder="例）80万円 〜 100万円 ※スキル見合い" />
+                </td>
+            </tr>
+            <tr>
+                <td>カテゴリー</td>
+                <td colspan="2">
+                    <input v-model="tour.Category" class="form-control" placeholder="例）業務 /ERP・PKG" />
+                </td>
+            </tr>
+            <tr>
+                <td>開発言語</td>
+                <td colspan="2">
+                    <input v-model="tour.Language" class="form-control" placeholder="例）C#" />
+                </td>
+            </tr>
+            <tr>
+                <td>案件特徴</td>
+                <td colspan="2">
+                    <input v-model="tour.Characteristics" class="form-control" placeholder="例）フルリモート / ウェブ面談可能" />
+                </td>
+            </tr>
+            <tr>
+                <td>案件内容</td>
+                <td colspan="2">
+                    <textarea v-model="tour.Contents" class="form-control" rows="9" placeholder="例）各国ローカルの商品企画を推進するにあたり、その標準プロセス・ツール類を整備し、各国に展開。
+全社戦略に連動した各国企画プロセスを立上げをを企画しており、この業務検討やツール作成を支援していただける方々を探している
+作業内容は以下
+・実行タスクの詳細化
+・現状業務・課題整理
+・ToBeプロセス検討"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>人材要件</td>
+                <td colspan="2">
+                    <textarea v-model="tour.Human" class="form-control" rows="9" placeholder="例）・同様プロジェクトでの経験があり、プロジェクトをリードできるコンサルタント
+・会議設計やコミュニケーションもこなせる人材
+・自分で手を動かしてドキュメント作成、課題設定、解決策検討に動ける人材"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>こだわり</td>
+                <td colspan="2">
+                    <textarea v-model="tour.Commitment" class="form-control" rows="9" placeholder="例）　　・外国籍不可
+　　・弊社プロパー参画"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>その他</td>
+                <td colspan="2">
+                    <textarea v-model="tour.Others" class="form-control" rows="9"></textarea>
+                </td>
+            </tr>
+        </table>
+        <p>
+            <button class="ic_shoulei hide_txt png btn btn-primary btn-lg marginLeft200px " type="button" @@click="formCheck">内容確認</button>
+            <button class="ic_shoulei hide_txt png btn btn-primary btn-lg marginLeft100px" type="button" @@click="formReset">クリア</button>
+        </p>
+    </form>
+</div>
+<el-dialog v-model="ensureDialogVisible"
+           title="内容確認">
+    <el-form :model="registerForm"
+             status-icon
+             label-width="120px"
+             class="ensure-form">
+        <el-form-item label="案件名：">
+            {{tour.Title}}
+        </el-form-item>
+        <el-form-item label="契約期間：">
+            {{tour.Period}}
+        </el-form-item>
+        <el-form-item label="作業場所：">
+            {{tour.Area}}
+        </el-form-item>
+        <el-form-item label="契約形態：">
+            {{selectOptions.find(it=>it.value == tour.Type).label }}
+        </el-form-item>
+        <el-form-item label="月額単価：">
+            {{tour.Price}}
+        </el-form-item>
+        <el-form-item label="カテゴリー：">
+            {{tour.Category}}
+        </el-form-item>
+        <el-form-item label="開発言語：">
+            {{tour.Language}}
+        </el-form-item>
+        <el-form-item label="案件特徴：">
+            {{tour.Characteristics}}
+        </el-form-item>
+        <el-form-item label="案件内容：">
+            {{tour.Contents}}
+        </el-form-item>
+        <el-form-item label="人材要件：">
+            {{tour.Human}}
+        </el-form-item>
+        <el-form-item label="こだわり：">
+            {{tour.Commitment}}
+        </el-form-item>
+        <el-form-item label="その他：">
+            {{tour.Others}}
+        </el-form-item>
+    </el-form>
+    <template #footer>
+        <span class="dialog-footer">
+            <el-button @@click="ensureDialogVisible = false">关闭</el-button>
+            <el-button @@click="formSubmit">确认</el-button>
+        </span>
+    </template>
+</el-dialog>
+
+
+@section Scripts {
+    <script>
+        createVueApp({
+            /*返回行程数据*/
+            data() {
+                return {
+                    tour: {
+                        Title: '',
+                        Period: '',
+                        Area: '',
+                        Type: '',
+                        Price: '',
+                        Category: '',
+                        Language: '',
+                        Characteristics: '',
+                        Contents: '',
+                        Human: '',
+                        Commitment: '',
+                        Others: '',
+                        Id: '@ViewBag.Id'
+                    },
+                    selectOptions: [
+                        {
+                            value: '1',
+                            label: '業務委託（準委任）'
+                        },
+                        {
+                            value: '2',
+                            label: '業務委託（請負）'
+                        }, {
+                            value: '3',
+                            label: '派遣契約'
+                        }, {
+                            value: '4',
+                            label: 'その他'
+                        }
+                    ],
+                    ensureDialogVisible: false
+                }
+            },
+            /*页面加载完成后回调下方的行程列表方法*/
+            mounted() {
+                //this.handleGetFoods();
+                if (this.tour.Id !== '') {
+                    this.GetItListInfo(this.tour.Id)
+                }
+            },
+            /*获取行程列表*/
+            methods: {
+                formReset() {
+                    this.tour = {
+                        Title: '',
+                        Period: '',
+                        Area: '',
+                        Type: '',
+                        Price: '',
+                        Category: '',
+                        Language: '',
+                        Characteristics: '',
+                        Contents: '',
+                        Human: '',
+                        Commitment: '',
+                        Others: ''
+                    }
+                },
+                formCheck() {
+                    this.ensureDialogVisible = true
+                },
+                formSubmit() {
+                    this.$http.post('/system/AddItListInfo', this.tour).then(res => {
+                        if (res) {
+                            location.href = "/system"
+                        } else {
+                            this.$message({
+                                message: '添加失败',
+                                type: 'error'
+                            });
+                        }
+                    })
+                },
+                GetItListInfo(id) {
+                    this.$http.post('/system/GetItListInfo', id).then(res => {
+                        if (res) {
+                            this.tour.Area = res.area;
+                            this.tour.Category = res.category;
+                            this.tour.Characteristics = res.characteristics;
+                            this.tour.Commitment = res.commitment;
+                            this.tour.Contents = res.contents;
+                            this.tour.Human = res.human;
+                            this.tour.Id = res.id;
+                            this.tour.Language = res.language;
+                            this.tour.Others = res.others;
+                            this.tour.Period = res.period;
+                            this.tour.Price = res.price;
+                            this.tour.Title = res.title;
+                            this.tour.Type = res.type;
+                        }
+                    })
+                }
+            }
+        })
+
+    </script>
+}

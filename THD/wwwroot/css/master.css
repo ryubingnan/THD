@@ -1,0 +1,254 @@
+﻿body {
+   /*background-color:#ffc30d;*/
+}
+/*右边框导航*/
+
+.commRightBar {
+    width: 30px;
+    height: 100%;
+    margin: 0% 0% 0% 0%;
+    position: absolute;
+    position: fixed;
+    right: 0%;
+    top: 0%;
+    background-color: #3c3c3c;
+    color: #ffffff;
+    text-align: center;
+    z-index: 3;
+}
+
+.rightMenuLogo1 {
+    margin-top: 310px;
+}
+
+.rightMenuLogo2 {
+    margin-top: 50px;
+}
+
+.rightMenuLogo3 {
+    margin-top: 50px;
+}
+#rightMenuBar1 {
+    margin: 0;
+    width: 100px;
+    line-height: 60px;
+    background: #3c3c3c;
+    display: none;
+    margin-right: 100px;
+    float: right;
+    position: absolute;
+    top: 286px;
+    right: -70px;
+    vertical-align: middle;
+}
+#rightMenuBar2 {
+    width: 100px;
+    line-height: 60px;
+    background: #3c3c3c;
+    display: none;
+    margin-right: 100px;
+    float: right;
+    position: absolute;
+    top: 386px;
+    right: -70px;
+    vertical-align: middle;
+}
+#rightMenuBar3 {
+    width: 100px;
+    line-height: 60px;
+    background: #3c3c3c;
+    display: none;
+    margin-right: 100px;
+    float: right;
+    position: absolute;
+    top: 460px;
+    right: -70px;
+    vertical-align: middle;
+}
+.navTopArea {
+    width: 100%;
+    height: 24px;
+    display: block;
+    color: #e0e0e0;
+    font-size: 12px;
+    margin: auto;
+    padding-top: 3px;
+    background-color:#3c3c3c;
+}
+.navTopArea h1 {
+    color: #3c3c3c;
+}
+    .navTopArea ul {
+        padding: 0px 30px 0px 0px;
+    }
+
+        .navTopArea ul li a {
+            color: #ffffff;
+        }
+
+        .navTopArea ul li {
+            list-style: none;
+            float: right;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+    .navTopArea table {
+        width: 96%;
+    }
+
+        .navTopArea table ul {
+            width: 100%;
+        }
+
+            .navTopArea table ul li {
+                width: 7%;
+                height: 15px;
+                float: left;
+                padding: 3px;
+            }
+
+                .navTopArea table ul li:hover {
+                    color: #3c3c3c;
+                }
+        .navTopArea table tr td {
+            color: #3c3c3c;
+        }
+        .navTopArea table tr td span {
+            color: #e0e0e0;
+            font-size:15px;
+        }
+
+.navCartTopArea {
+    width: 100%;
+    height: 100px;
+    color: #e0e0e0;
+    font-size: 12px;
+    margin: auto;
+    padding-top: 3px;
+    background-color: #3c3c3c;
+}
+
+    .navCartTopArea h1 {
+        color: #e0e0e0;
+    }
+
+    .navCartTopArea ul {
+        padding: 0px 30px 0px 0px;
+    }
+
+        .navCartTopArea ul li a {
+            color: #e0e0e0;
+        }
+
+        .navCartTopArea ul li {
+            list-style: none;
+            float: right;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+    .navCartTopArea table {
+        width: 96%;
+    }
+
+        .navCartTopArea table ul {
+            width: 100%;
+        }
+
+            .navCartTopArea table ul li {
+                width: 7%;
+                height: 15px;
+                float: left;
+                padding: 3px;
+            }
+
+                .navCartTopArea table ul li:hover {
+                    color: #e0e0e0;
+                }
+
+        .navCartTopArea table tr td {
+            color: #e0e0e0;
+        }
+
+            .navCartTopArea table tr td span {
+                color: #e0e0e0;
+                font-size: 19px;
+            }
+/*自定义需求模态框*/
+.customizeDiv {
+    margin: auto;
+}
+
+    .customizeDiv table {
+        margin: auto;
+        width: 100%;
+        height: 240px;
+        text-align: left;
+    }
+        .customizeDiv table tr td {
+           text-align:right;
+        }
+        .customizeDiv table input {
+            width: 269px;
+            float: left;
+            margin-left: 3px;
+        }
+
+.navMessageTopArea {
+    width: 100%;
+    height: 70px;
+    display: block;
+    color: #e0e0e0;
+    font-size: 12px;
+    margin: auto;
+    padding-top: 3px;
+    background-color: #3c3c3c;
+}
+
+.navMessageTopArea h1 {
+    color: #3c3c3c;
+}
+
+.navMessageTopArea ul {
+    padding: 0px 30px 0px 0px;
+}
+
+    .navMessageTopArea ul li a {
+        color: #ffffff;
+    }
+
+    .navMessageTopArea ul li {
+        list-style: none;
+        float: right;
+        margin-right: 10px;
+        cursor: pointer;
+    }
+
+.navMessageTopArea table {
+    width: 96%;
+}
+
+.navMessageTopArea table ul {
+    width: 100%;
+}
+
+    .navMessageTopArea table ul li {
+        width: 7%;
+        height: 15px;
+        float: left;
+        padding: 3px;
+    }
+
+        .navMessageTopArea table ul li:hover {
+            color: #3c3c3c;
+        }
+
+    .navMessageTopArea table tr td {
+        color: #3c3c3c;
+    }
+
+        .navMessageTopArea table tr td span {
+            color: #e0e0e0;
+            font-size: 15px;
+        }

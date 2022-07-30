@@ -1,0 +1,104 @@
+﻿@model UserLoginQuery
+
+@{
+ViewData["Title"] = "会员登陆";
+}
+@section Styles{
+    <style>
+        .login-box {
+            width: 100%;
+            height: 1000px;
+            max-height: 1000px;
+            padding-top: 590px;
+            background-image: url("/imgs/banner8.jpg");
+            background-size: cover;
+        }
+
+            .login-box .el-form {
+                width: 100%;
+                max-width: 600px;
+                margin: 0 auto;
+                padding: 1rem;
+            }
+    </style>
+}
+<div class="login-box">
+    <el-form ref="form" :model="loginForm" :rules="rules" label-width="120px">
+        <el-form-item label-width="0" style="margin-bottom: 15px">
+            ■ 会員IDが登録したメールアドレスでございます。
+        </el-form-item>
+        <el-form-item label-width="0" prop="userName">
+            <el-input v-model="loginForm.userName"
+                      placeholder="会員ID"></el-input>
+        </el-form-item>
+        <el-form-item label-width="0" prop="password">
+            <el-input v-model="loginForm.password"
+                      placeholder="パスワード"
+                      type="password"></el-input>
+        </el-form-item>
+        <el-form-item label-width="0">
+            <el-button type="primary" @@click="handleLogin">ログイン</el-button>
+            <el-button type="primary" @@click="handleClear">クリア</el-button>
+        </el-form-item>
+    </el-form>
+</div>
+
+@section Scripts{
+    <script>
+createVueApp({
+    data() {
+        return {
+            loginForm:{
+                userName: null,
+                password: null,
+                returnUrl: null
+            },
+            rules: {
+                userName: [
+                    {
+                        required: true,
+                        message: '会員IDをご入力ください。',
+                        trigger: 'blur',
+                    },
+                ],
+                    password :[
+                    {
+                        required: true,
+                        message: 'パスワードをご入力ください。',
+                        trigger: 'blur',
+                    }
+                ],
+            }
+        }
+    },
+    mounted (){
+        this.loginForm.returnUrl = "@Model.ReturnUrl"
+    },
+    methods: {
+        handleLogin(){
+            this.$refs['form'].validate((valid) => {
+                if(valid){
+                    this.login(this.loginForm).then(res =>{
+                        if(this.loginForm.returnUrl){
+                            location.href = this.loginForm.returnUrl
+                        }else{
+                            window.location.href = "/System/Index";
+                        }
+                    })
+                }
+            })
+        },
+        handleClear(){
+          /*  location.href = "/account/register"*/
+            /*  window.location.href = "/System/Index";*/
+            this.loginForm.userName = null
+            this.loginForm.password = null
+        },
+        login(loginForm){
+            return this.$http.post('/account/login', loginForm)
+        }
+    }
+})
+
+    </script>
+}

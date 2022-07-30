@@ -1,0 +1,162 @@
+﻿@{
+    ViewData["Title"] = "会员信息";
+}
+@using THD.Web.Models.User
+@model UserViewModel
+
+@section Styles{
+    <style>
+        .myroomMemberInfo table tr td {
+            width: auto !important;
+        }
+    </style>
+}
+
+<div class="myroomMemberInfo">
+    <p>■会员信息</p>
+    <form id="theform" asp-area="" asp-controller="MyRoom" asp-action="MemberInfo" enctype="multipart/form-data" method="post">
+        <input type="hidden" id="Id" name="Id" value="@Model.Id" />
+        <table>
+            <tbody>
+                <tr>
+                    <td style="width: 100px;">东洋会员ID：</td>
+                    <td>
+                        <label id="lbUserID">@Model.Id</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>姓名：</td>
+                    <td>
+                        <input disabled="disabled" asp-for="Name" class="form-control" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>会员身份：</td>
+                    <td>
+                        @{
+                            List<SelectListItem> selectListItems = new List<SelectListItem>();
+
+                            selectListItems.Add(new SelectListItem
+                            {
+                                Text = "请选择",
+                                Value = "",
+                                Selected = true
+                            });
+                            selectListItems.Add(new SelectListItem
+                            {
+                                Text = "普通会员",
+                                Value = "member"
+                            });
+                            selectListItems.Add(new SelectListItem
+                            {
+                                Text = "管理员",
+                                Value = "admin"
+                            });
+                            selectListItems.Add(new SelectListItem
+                            {
+                                Text = "超级管理员",
+                                Value = "super"
+                            });
+
+                            if (Model.Id > 0)
+                            {
+                                var item = selectListItems.FirstOrDefault(t => t.Value == Model.Type);
+                                if (item is not null)
+                                {
+                                    item.Selected = true;
+                                }
+                            }
+                        }
+                        <select disabled="disabled" asp-for="Type" asp-items="@selectListItems" class="form-control"></select>
+                        <span asp-validation-for="Type" class="text-danger"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>入会日期：</td>
+                    <td>
+                        <label id="lbRegdate">@Model.CreateTime.ToString("yyyy-MM-dd HH:mm:ss")</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>会员邮箱：</td>
+                    <td>
+                        <input disabled="disabled" asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>会员地址：</td>
+                    <td>
+                        <input disabled="disabled" asp-for="Address" class="form-control" />
+                        <span asp-validation-for="Address" class="text-danger"></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>QQ：</td>
+                    <td>
+                        <input disabled="disabled" asp-for="QQ" class="form-control" />
+                        <span asp-validation-for="QQ" class="text-danger"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>微信：</td>
+                    <td>
+                        <input disabled="disabled" asp-for="WeChat" class="form-control" />
+                        <span asp-validation-for="WeChat" class="text-danger"></span>
+                    </td>
+                </tr>
+                <tr style="border-bottom: none;">
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>公司名称：</td>
+                    <td>
+                        <input disabled="disabled" asp-for="GSMC" class="form-control" />
+                        <span asp-validation-for="GSMC" class="text-danger"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>公司电话：</td>
+                    <td>
+                        <input disabled="disabled" asp-for="GSDH" class="form-control" />
+                        <span asp-validation-for="GSDH" class="text-danger"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>公司邮箱：</td>
+                    <td>
+                        <input disabled="disabled" asp-for="GSYX" class="form-control" />
+                        <span asp-validation-for="GSYX" class="text-danger"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>公司传真：</td>
+                    <td>
+                        <input disabled="disabled" asp-for="GSCZ" class="form-control" />
+                        <span asp-validation-for="GSCZ" class="text-danger"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>公司地址：</td>
+                    <td>
+                        <textarea disabled="disabled" asp-for="GSDZ" class="form-control" rows="3"></textarea>
+                        <span asp-validation-for="GSDZ" class="text-danger"></span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <input type="button" name="ctl00$body$ctl00" value="个人信息编辑" class="btn btn-primary glyphicon glyphicon-search" onclick="formEdit()">
+        <input type="submit" disabled="disabled" name="ctl00$body$ctl01" value="个人信息更新" class="btn btn-primary glyphicon glyphicon-search">
+    </form>
+</div>
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+    <script>
+        function formEdit() {
+            $("#theform *").not(":reset, :hidden").removeAttr("disabled");
+        }
+    </script>
+}

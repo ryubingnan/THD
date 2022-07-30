@@ -1,0 +1,68 @@
+﻿@{
+    string type = string.Empty;
+    if (User.Identity.IsAuthenticated)
+        type = User.Claims?.FirstOrDefault(c => c.Type == System.Security.Claims.ClaimTypes.Role).Value;
+}
+
+<button type="button" class="btn btn-default" id="toggle-sidebar">
+    <span class="glyphicon glyphicon-th-list"></span>
+</button>
+<div class="left-bar-bg">
+</div>
+<div class="left-bar-list">
+    <div class="logo"><a href="/">春夏秋冬</a></div>
+    <div class="addr">日本</div>
+    <ul>
+        <li>
+            <a href="/Account/Login">会员登陆</a>
+        </li>
+        <li>
+            <a href="/Account/Register">会员注册</a>
+        </li>
+        <li>
+            <a href="">商家入驻</a>
+        </li>
+        <li>
+            <a href="/MyRoom/Index">我的空间</a>
+        </li>
+        @if (User.Identity.IsAuthenticated && type is not null && (type.ToLower() == "admin" || type.ToLower() == "super")) {
+            <li>
+                <a href="/System/Index">后台管理</a>
+            </li>
+        }
+        <li>
+            <span onclick="logout()">退出登陆</span>
+        </li>
+    </ul>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script>
+    $(function () {
+        $('#toggle-sidebar').click(function () {
+            $('.left-bar-bg').css({
+                'transform': 'translateX(0)',
+                'background': 'rgba(0,0,0,.5)'
+            })
+            $('.left-bar-list').css({
+                'transform': 'translateX(0)',
+                'box-shadow': '5px 5px 10px #000'
+            })
+        });
+        $('.left-bar-bg').click(function () {
+            $('.left-bar-bg').css({
+                'transform': 'translateX(-100%)',
+                'background': 'rgba(0,0,0,0)'
+            })
+            $('.left-bar-list').css({
+                'transform': 'translateX(-100%)',
+                'box-shadow': '0 0'
+            })
+        });
+    })
+    function logout() {
+        $.post("/Account/Logout", function (data, status) {
+            window.location.href = "/";
+        });
+    }
+</script>

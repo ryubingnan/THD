@@ -1,0 +1,82 @@
+﻿@using THD.Web.Models.User
+@model UserListViewModel
+@{
+    ViewData["Title"] = "User List";
+}
+
+<style>
+    .table td, .table th {
+        vertical-align: middle;
+    }
+</style>
+
+<h1>@ViewData["Title"]</h1>
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Users[0].Id)</th>
+            <th>@Html.DisplayNameFor(model => model.Users[0].UserName)</th>
+            <th>@Html.DisplayNameFor(model => model.Users[0].Name)</th>
+            <th>@Html.DisplayNameFor(model => model.Users[0].Phone)</th>
+            <th>@Html.DisplayNameFor(model => model.Users[0].Email)</th>
+            <th>@Html.DisplayNameFor(model => model.Users[0].Gender)</th>
+            <th>@Html.DisplayNameFor(model => model.Users[0].CreateTime)</th>
+            <th>@Html.DisplayNameFor(model => model.Users[0].UpdateTime)</th>
+            <th>Operation</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model.Users)
+        {
+            <tr>
+                <td> @Html.DisplayFor(model => user.Id)</td>
+                <td> @Html.DisplayFor(model => user.UserName)</td>
+                <td> @Html.DisplayFor(model => user.Name)</td>
+                <td> @Html.DisplayFor(model => user.Phone)</td>
+                <td> @Html.DisplayFor(model => user.Email)</td>
+                <td> @Html.DisplayFor(model => user.GenderDesc)</td>
+                <td> @Html.DisplayFor(model => user.CreateTime)</td>
+                <td> @Html.DisplayFor(model => user.UpdateTime)</td>
+                <td>
+                    <button id="edit" onclick="onEdit(@user.Id)"  class="btn btn-primary">Edit</button>
+                    <a id="remove" onclick="onRemove(@user.Id)" class="btn btn-danger">Remove</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div id="modal"></div>
+
+@section Scripts{
+<script type="text/javascript">
+    function onEdit(userId){
+        $.ajax({
+            type: "GET",
+            url: "/User/Edit?id=" + userId,
+            success: function (msg) {
+                console.log(msg)
+                $("#modal").html(msg);
+            }
+        });
+    }
+
+    function onRemove(userId){
+        $.ajax({
+            type: "POST",
+            url: "/User/Remove?id=" + userId,
+            success: function(msg){
+                if(msg){
+                    alert(msg)
+                }
+
+                location.reload()
+            }
+        });
+    }
+
+    $(function () {
+
+    })
+</script>
+}

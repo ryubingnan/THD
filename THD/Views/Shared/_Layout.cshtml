@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <!-- elemnt-plus -->
+    <link rel="stylesheet" href="~/lib/element-plus/dist/index.css" />
+    <link rel="stylesheet" href="~/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/common.css" />
+    <link rel="stylesheet" href="~/css/index.css" />
+    <link rel="stylesheet" href="~/css/swiper.min.css" />
+    @await RenderSectionAsync("Styles", required: false)
+    <style>
+        /* 隐藏google翻译的弹窗 */
+        #goog-gt-tt {
+            transform: scale(0, 0);
+            background-color: transparent !important;
+            -webkit-box-shadow: 0 0px 0px rgba(0,0,0,0) !important;
+            -moz-box-shadow: 0 0px 0px rgba(0,0,0,0) !important;
+            box-shadow: 0 0px 0px rgba(0,0,0,0) !important;
+        }
+        /* 隐藏google顶部横条 */
+        .goog-te-banner-frame {
+            display: none;
+        }
+        .el-notification.right{
+            top:100px!important
+        }
+    </style>
+    <!--google翻译功能加载-->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            let langname = navigator.language ? navigator.language.split('-')[0].toLowerCase() : 'en'; //动态获取用户的语种，可以动态赋值到pageLanguage
+            console.log(langname);
+            new google.translate.TranslateElement({
+                pageLanguage: 'ja', //页面语种
+                includedLanguages: 'zh-CN,ja,en',  //期望翻译的语种，如果不设置默认全部语种
+                autoDisplay: false,
+                gaTrack: true,
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script src="https://translate.google.co.jp/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript"></script>
+    
+</head>
+
+<body id="app">
+
+
+    @* 全局衔接导航条 *@
+    <partial name="_Header" />
+
+    @* 页面内容 *@
+    <div>
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+    @* 底部栏 *@
+    <partial name="_Footer" />
+
+    @* 返回顶部 *@
+    <partial name="_ToTop" />
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.cookie.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- vue3 -->
+    <script src="~/lib/vue/dist/vue.global.prod.js" asp-append-version="true"></script>
+    <!-- elemnt-plus -->
+    <script src="~/lib/element-plus/dist/index.full.min.js" asp-append-version="true"></script>
+    <script src="~/lib/element-plus/locale/lang/zh-cn.js" asp-append-version="true"></script>
+    <!-- axios -->
+    <script src="~/lib/axios/dist/axios.min.js" asp-append-version="true"></script>
+    <!-- 自定义js -->
+    <script src="~/js/common.js" asp-append-version="true"></script>
+    <script src="~/js/site.js"></script>
+    <script src="~/js/loading.js"></script>
+    <script src="~/js/utils.js"></script>
+    <script src="~/js/is.js"></script>
+    <script src="~/js/http.js"></script>
+    <!--谷歌翻译清空-->
+    <script>
+        $(document).ready(function () {
+            $.cookie("googtrans", "", { expires: -1 });
+        });
+    </script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>

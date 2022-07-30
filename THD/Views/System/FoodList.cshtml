@@ -1,0 +1,136 @@
+﻿@{
+    ViewData["Title"] = "美食管理";
+}
+
+<div class="foodInfo2" id="section-2">
+    <table>
+        <tr>
+            <td>美食名称：</td>
+            <td><input class="form-control" type="text" v-model="iptTitle" /></td>
+            <td>美食类别：</td>
+            <td>
+                <input class="form-control" type="text" v-model="iptType" />
+            </td>
+            <td>
+                <input type="button" class="ic_shoulei hide_txt png btn btn-primary btn-lg btnShoppingCart" value="查询" @@click="handleGetFoods" />
+                <input type="button" class="ic_shoulei hide_txt png btn btn-primary btn-lg btnShoppingCart" value="清空" @@click="handleClear" />
+            </td>
+        </tr>
+    </table>
+</div>
+<div>
+
+    <table>
+        <tbody v-for="(food, i) in foods">
+            <tr>
+                <td style="width: 20%; vertical-align: top;" rowspan="4">
+                    <img :src="food.img1" style="width: 300px; height: 173px; margin: 5px;" alt="">
+                </td>
+                <td colspan="5" style="height: 40px; font-size: 19px; text-align: left; color: #00A600; font-weight: bold; padding-left: 10px;">
+                    <span id="ctl00_body_RepeaterAllListInfo_ctl00_Label1">{{food.title}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="6" style="text-align: left;">
+                    <span style="border: 1px solid #666666; margin: 15px; font-size: 12px; color: #666666; padding: 2px; width: 30%;">类型</span>{{food.type}}
+                    <span style="border: 1px solid #666666; margin: 15px; font-size: 12px; color: #666666; padding: 2px; width: 30%;">区域</span>{{food.area}}
+                    <span style="border: 1px solid #666666; margin: 15px; font-size: 12px; color: #666666; padding: 2px; width: 30%;">天数</span>
+                    <span style="border: 1px solid #666666; margin: 15px; font-size: 12px; color: #666666; padding: 2px; width: 30%;">惊喜</span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="5" style="padding-left: 10px; text-align: left;">{{food.type}}</td>
+                <td style="text-align: center; width: 200px; vertical-align: middle;">
+                    ￥<span id="ctl00_body_RepeaterAllListInfo_ctl00_Label2" style="color:#FF3300;font-size:36px;">{{food.price}}</span>元
+                    <br>
+                    <span>
+                        <a :href="'/system/AddFood/' + food.id">
+                            <input type="button" class="btn btn-primary" value="编辑">
+                        </a>
+                    </span>
+                    &nbsp;
+                    <span>
+                        <input type="button" class="btn btn-primary" @@click="handleDelete(food.id)" value="删除">
+                    </span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table border="0">
+        <tr>
+            <td colspan="5" style="border-bottom:0px !important">
+                <el-pagination v-model:current-page="pagination.pageIndex"
+                               :page-sizes="[12, 24, 36]"
+                               v-model:page-size="pagination.pageSize"
+                               layout="total, sizes, prev, pager, next, jumper"
+                               :total="pagination.totalCount"
+                               @@size-change="handleGetFoods"
+                               @@current-change="handleGetFoods">
+                </el-pagination>
+            </td>
+        </tr>
+    </table>
+</div>
+
+
+@section Scripts{
+
+    <script>
+        createVueApp({
+            /*返回行程数据*/
+            data() {
+                return {
+                    foods: [],
+                    pagination: {
+                        pageIndex: 1,
+                        pageSize: 12,
+                        totalCount: 0,
+                    },
+                    iptTitle: '',
+                    iptType: ''
+                }
+            },
+            /*页面加载完成后回调下方的行程列表方法*/
+            mounted() {
+                this.handleGetFoods();
+            },
+            /*获取行程列表*/
+            methods: {
+                handleGetFoods() {
+                    this.pagination.Title = this.iptTitle
+                    this.pagination.Type = this.iptType
+                    this.getFoods(this.pagination).then(res => {
+                        this.foods = res.items
+                        this.pagination.totalCount = res.totalCount
+                    })
+                },
+                handleTabClick() {
+
+                },
+
+                /*发送请求*/
+                getFoods(pagination) {
+                    return this.$http.post('/food/getlist', pagination)
+                },
+                handleClear() {
+                    this.iptTitle = ''
+                    this.iptType = ''
+                },
+                handleDelete(id) {
+                    this.$http.post('/system/deleteFood', id).then(res => {
+                        if (res) {
+                            this.handleGetFoods()
+                        } else {
+                            this.$message({
+                                message: '删除失败',
+                                type: 'error'
+                            });
+                        }
+                    })
+                }
+            }
+        })
+
+    </script>
+}

@@ -1,0 +1,123 @@
+﻿@{
+    ViewData["Title"] = "退会一览";
+}
+
+<div class="memberInfo2" id="section-2">
+    <table>
+        <tr>
+            <td>会员名称：</td>
+            <td><input class="form-control" type="text" v-model="iptName" /></td>
+            <td>会员邮箱：</td>
+            <td>
+                <input class="form-control" type="text" v-model="iptEmail" />
+            </td>
+            <td>
+                <input type="button" class="ic_shoulei hide_txt png btn btn-primary btn-lg btnShoppingCart" value="查询" @@click="handleGetMembers" />
+                <input type="button" class="ic_shoulei hide_txt png btn btn-primary btn-lg btnShoppingCart" value="清空" @@click="handleClear" />
+            </td>
+        </tr>
+    </table>
+</div>
+<div>
+
+    <table>
+        <tbody v-for="(member, i) in members">
+            <tr>
+                <td style="width: 20%; vertical-align: top;" rowspan="4">
+                    <img :src="member.pic" style="width: 300px; height: 173px; margin: 5px;" alt="">
+                </td>
+                <td colspan="5" style="height: 40px; font-size: 19px; text-align: left; color: #00A600; font-weight: bold; padding-left: 10px;">
+                    <span id="ctl00_body_RepeaterAllListInfo_ctl00_Label1">{{member.name}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="6" style="text-align: left;">
+                    <span style="border: 1px solid #666666; margin: 15px; font-size: 12px; color: #666666; padding: 2px; width: 30%;">邮箱</span>{{member.email}}
+                    <span style="border: 1px solid #666666; margin: 15px; font-size: 12px; color: #666666; padding: 2px; width: 30%;">创建时间</span>{{member.createTime}}
+                    <span style="border: 1px solid #666666; margin: 15px; font-size: 12px; color: #666666; padding: 2px; width: 30%;">类型</span>{{member.type}}
+                    <span style="border: 1px solid #666666; margin: 15px; font-size: 12px; color: #666666; padding: 2px; width: 30%;">权限</span>{{member.identity}}
+                </td>
+            </tr>
+            <tr>
+                <td colspan="6" style="text-align: center; width: 200px; vertical-align: middle;">
+                    <span>
+                        <input type="button" class="btn btn-primary" :disabled="member.identity=='NO'?true:false" @@click="handleAgree(member.id)" value="同意">
+                    </span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table border="0">
+        <tr>
+            <td colspan="5" style="border-bottom:0px !important">
+                <el-pagination v-model:current-page="pagination.pageIndex"
+                               :page-sizes="[12, 24, 36]"
+                               v-model:page-size="pagination.pageSize"
+                               layout="total, sizes, prev, pager, next, jumper"
+                               :total="pagination.totalCount"
+                               @@size-change="handleGetMembers"
+                               @@current-change="handleGetMembers">
+                </el-pagination>
+            </td>
+        </tr>
+    </table>
+</div>
+
+
+
+@section Scripts{
+
+    <script>
+        createVueApp({
+            /*返回行程数据*/
+            data() {
+                return {
+                    members: [],
+                    pagination: {
+                        pageIndex: 1,
+                        pageSize: 12,
+                        totalCount: 0,
+                    },
+                    iptName: '',
+                    iptEmail: ''
+                }
+            },
+            /*页面加载完成后回调下方的行程列表方法*/
+            mounted() {
+                this.handleGetMembers();
+            },
+            /*获取行程列表*/
+            methods: {
+                handleGetMembers() {
+                    this.pagination.Name = this.iptName
+                    this.pagination.Email = this.iptEmail
+                    this.getMembers(this.pagination).then(res => {
+                        this.members = res.items
+                        this.pagination.totalCount = res.totalCount
+                    })
+                },
+                /*发送请求*/
+                getMembers(pagination) {
+                    return this.$http.post('/System/MemberOffList', pagination)
+                },
+                handleClear() {
+                    this.iptName = ''
+                    this.iptEmail = ''
+                },
+                handleAgree(id) {
+                    this.$http.post('/System/MemberAgree', id).then(res => {
+                        if (res) {
+                            this.handleGetMembers()
+                        } else {
+                            this.$message({
+                                message: '失败',
+                                type: 'error'
+                            });
+                        }
+                    })
+                }
+            }
+        })
+    </script>
+}

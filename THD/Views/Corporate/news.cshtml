@@ -1,0 +1,340 @@
+﻿
+<!DOCTYPE html>
+<html lang="ja" class="theme-company">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="author" content="登峰開発株式会社">
+    <meta name="description" content="登峰開発のニュースリリース一覧です。こちらに記載している情報は発表日時点のものです。現時点では内容が異なる場合がありますので、あらかじめご了承ください。">
+    <meta name="keywords" content="登峰開発,パーソルグループ,ニュースリリース">
+    <title>ニュース一覧 ｜IT・機電エンジニアの人材派遣なら登峰開発</title>
+
+
+
+    <meta name="apple-mobile-web-app-title" content="登峰開発のエンジニア派遣">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="apple-touch-icon" href="~/img/icon.png">
+    <link rel="stylesheet" type="text/css" href="~/css/style1.css">
+
+    <script>
+
+        //カテゴリーナビゲーション
+        var loc = location.pathname,
+            dir = loc.substring(0, loc.lastIndexOf('/')) + '/';
+        $(function () {
+            $('.p-news-category__link').each(function () {
+                if ($(this).attr('href') == dir) {
+                    $(this).addClass('is-current');
+                }
+            })
+            $('.p-news-category__selectbox option').each(function () {
+                if ($(this).val() == dir) {
+                    $(this).prop('selected', true);
+                }
+            })
+            $('.p-news-category__selectbox').change(function () {
+                var href = $(this).val();
+                location.href = href;
+            })
+        })
+        //表示件数の初期化
+        var displays = 6;
+        $(function () {
+            // 初期表示
+            $('.p-card__item').each(function (i) {
+                if (i < 15) {
+                    $(this).show();
+                    $(this).removeClass('u-hide');
+                    $(this).addClass('is-open');
+                } else {
+                    $(this).hide();
+                    $(this).addClass('u-hide');
+                }
+            })
+            if ($('.p-card__item').length <= 15) {
+                $('.p-button-layout').parent().hide();
+            }
+            //ボタン操作
+            $('#js-show-card').click(function () {
+                var c = $('.p-card__item.is-open').length;
+                var n = c + displays;
+                $('.p-card__item').each(function (i) {
+                    if (i < n) {
+                        $(this).show();
+                        $(this).removeClass('u-hide');
+                        $(this).addClass('is-open');
+                    } else {
+                        $(this).hide();
+                        $(this).addClass('u-hide');
+                    }
+                })
+                if ($('.p-card__item').length <= n) {
+                    $('.p-button-layout').parent().hide();
+                }
+            })
+
+        })
+
+
+    </script>
+    <meta charset="utf-8">
+
+</head>
+<body marginwidth="0" marginheight="0" leftmargin="0" topmargin="0">
+
+
+
+
+
+    <div class="l-header">
+        <div class="l-header__inner">
+            <div class="l-header__left">
+                <a class="l-header__img p-logo-header" href="/">
+                    <img class="p-logo__img" src="~/img/common/icon_logo_01.svg" alt="登峰開発">
+                </a>
+            </div>
+            <div class="l-header__right">
+                <div class="l-header__navigation">
+                    <ul class="l-header__sub p-utility-navigation">
+                        <li class="p-utility-navigation__item">
+                            <a class="p-utility-navigation__link" href="/corporate/outline/">
+                                企業情報
+                            </a>
+                        </li>
+                        <li class="p-utility-navigation__item">
+                            <a class="p-utility-navigation__link" href="/corporate/service/">
+                                法人のお客様へ
+                            </a>
+                        </li>
+                        <li class="p-utility-navigation__item">
+                            <a class="p-utility-navigation__link" href="/corporate/recruiting/">
+                                採用情報
+                            </a>
+                        </li>
+                        <li class="p-utility-navigation__item">
+                            <a class="p-utility-navigation__link" href="/contact/">
+                                お問い合わせ
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="l-header__main p-global-navigation">
+                        <li class="p-global-navigation__item">
+                            <a class="p-global-navigation__link" href="/jobsearch/">
+                                求人を検索
+                            </a>
+                        </li>
+                        <li class="p-global-navigation__item">
+                            <a class="p-global-navigation__link" href="/bene/">
+                                福利厚生
+                            </a>
+                        </li>
+                        <li class="p-global-navigation__item">
+                            <a class="p-global-navigation__link" href="/skillup/">
+                                スキルアップ支援
+                            </a>
+                        </li>
+                        <li class="p-global-navigation__item">
+                            <a class="p-global-navigation__link" href="/guide/">
+                                派遣就業ガイド
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="l-header__menu p-header-tools">
+                    <li class="p-header-tools__item">
+                        <a class="p-header-tools__link" href="/jobsearch/">
+                            <img class="p-header-tools__img p-header-tools__img--serch" src="~/img/common/icon_search_01.svg"
+                                 alt="">
+                            <span class="p-header-tools__label">求人検索</span>
+                        </a>
+                    </li>
+                    <li class="p-header-tools__item">
+                        <a class="p-header-tools__link" href="#" onclick="window.open('/keep/index.html', 'kentouListDetail', 'width=650,height=450');">
+                            <div class="p-header-tools__imgwrap">
+                                <img class="p-header-tools__img p-header-tools__img--list" src="~/img/common/icon_star_01.svg"
+                                     alt="">
+                                <span class="p-header-tools__badge">
+                                    <span class="p-header-tools__number"></span>
+                                </span>
+                            </div>
+                            <span class="p-header-tools__label">検討リスト</span>
+                        </a>
+                    </li>
+
+                    <li class="p-header-tools__item">
+                        <a class="p-header-tools__link" href="/mypage/account/entryFormPre/">
+                            <img class="p-header-tools__img p-header-tools__img--regist" src="~/img/common/icon_memo_01.svg"
+                                 alt="">
+                            <span class="p-header-tools__label">新規登録</span>
+                        </a>
+                    </li>
+                    <li class="p-header-tools__item">
+                        <a class="p-header-tools__link" href="/mypage/account/login/">
+                            <img class="p-header-tools__img p-header-tools__img--login" src="~/img/common/icon_user_01.svg"
+                                 alt="">
+                            <span class="p-header-tools__label">ログイン</span>
+                        </a>
+                    </li>
+
+                    <li class="p-header-tools__item">
+                        <a class="p-header-tools__link p-button-humberger js-sp-menu-opner" href="#">
+                            <span class="p-button-humberger__border"></span>
+                            <span class="p-button-humberger__open">メニュー</span>
+                            <span class="p-button-humberger__close">閉じる</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        @*<div class="p-navigation-sp">
+            <ul class="p-navigation-sp__top p-navigation-sp__top--toja">
+                <li class="p-navigation-sp__item p-navigation-sp__item--toja">
+                    <a class="p-navigation-sp__link p-navigation-sp__link--toja" href="/jobsearch/">求人検索</a>
+                </li>
+                <li class="p-navigation-sp__item p-navigation-sp__item--toja">
+                    <a class="p-navigation-sp__link p-navigation-sp__link--toja" href="/bene/">福利厚生</a>
+                </li>
+                <li class="p-navigation-sp__item p-navigation-sp__item--toja">
+                    <a class="p-navigation-sp__link p-navigation-sp__link--toja" href="/skillup/">スキルアップ支援</a>
+                </li>
+                <li class="p-navigation-sp__item p-navigation-sp__item--toja">
+                    <a class="p-navigation-sp__link p-navigation-sp__link--toja" href="/guide/">派遣就業ガイド</a>
+                </li>
+            </ul>
+            <ul class="p-navigation-sp__bottom">
+                <li class="p-navigation-sp__item p-navigation-sp__item--2">
+                    <a class="p-navigation-sp__link" href="/corporate/outline/">企業情報</a>
+                </li>
+                <li class="p-navigation-sp__item p-navigation-sp__item--2">
+                    <a class="p-navigation-sp__link" href="/corporate/business/">法人のお客様へ</a>
+                </li>
+                <li class="p-navigation-sp__item p-navigation-sp__item--2">
+                    <a class="p-navigation-sp__link" href="/corporate/recruiting/">採用情報</a>
+                </li>
+                <li class="p-navigation-sp__item p-navigation-sp__item--2">
+                    <a class="p-navigation-sp__link" href="/contact/">お問い合わせ</a>
+                </li>
+            </ul>
+        </div>*@
+
+    </div>
+
+
+
+    <div class="l-visual-heading">
+        <div class="l-visual-heading__inner">
+            <div class="l-visual-heading__img">
+                <img class="l-visual-heading__bg u-use--pc" src="~/img/corporate/news/img_visual_01_pc.jpg" alt="">
+                <img class="l-visual-heading__bg u-use--sp" src="~/img/corporate/news/img_visual_01_sp.jpg" alt="">
+            </div>
+            <div class="l-visual-heading__box">
+                <div class="p-page-title-2">
+                    <h1 class="p-page-title-2__heading">ニュース</h1>
+                    <p class="p-page-title-2__sub">NEWS</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="l-contents-navigation">
+        <div class="l-contents-navigation__inner l-contents-navigation__inner--type2">
+            <div class="p-local-navigation">
+                <ul class="p-local-navigation__list">
+                    <li class="p-local-navigation__item">
+                        <a class="p-local-navigation__link" href="/corporate/infomation/">企業情報</a>
+                    </li>
+                    <li class="p-local-navigation__item">
+                        <a class="p-local-navigation__link" href="/corporate/service/">サービス</a>
+                    </li>
+                    <li class="p-local-navigation__item">
+                        <a class="p-local-navigation__link" href="/corporate/news/">ニュース</a>
+                    </li>
+                    <li class="p-local-navigation__item">
+                        <a class="p-local-navigation__link" href="/corporate/recruiting/">採用情報</a>
+                    </li>
+                </ul>
+            </div><!-- /.p-local-navigation -->
+            <ul class="p-breadcrumbs">
+                <li class="p-breadcrumbs__item">
+                    <a class="p-breadcrumbs__link" href="/">トップ</a>
+                </li>
+                <li class="p-breadcrumbs__item">
+                    <a class="p-breadcrumbs__link" href="/corporate/">コーポレート</a>
+                </li>
+                <li class="p-breadcrumbs__item">
+                    <span class="p-breadcrumbs__link">ニュース一覧</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="l-content-wrapper l-content-wrapper--bg">
+        <div class="l-single">
+            <div class="l-single__inner">
+
+                <div class="p-section--lv1">
+
+                    <div class="p-section--lv2">
+                        <div class="p-news-category">
+                            <ul class="p-news-category__list u-use--pc">
+                                <li class="p-news-category__item">
+                                    <a class="p-news-category__link" href="/corporate/news/">
+                                        <span class="p-news-category__text">すべて</span>
+                                    </a>
+                                </li>
+                                <li class="p-news-category__item">
+                                    <a class="p-news-category__link" href="/corporate/news/category/notice/">
+                                        <span class="p-news-category__text">お知らせ</span>
+                                    </a>
+                                </li>
+                                <li class="p-news-category__item">
+                                    <a class="p-news-category__link" href="/corporate/news/category/release/">
+                                        <span class="p-news-category__text">プレスリリース</span>
+                                    </a>
+                                </li>
+                                <li class="p-news-category__item">
+                                    <a class="p-news-category__link" href="/corporate/news/category/research/">
+                                        <span class="p-news-category__text">調査</span>
+                                    </a>
+                                </li>
+                                <!--<li class="p-news-category__item">
+                                  <a class="p-news-category__link" href="/corporate/news/category/column/">
+                                    <span class="p-news-category__text">コラム</span>
+                                  </a>
+                                </li>-->
+                                <li class="p-news-category__item">
+                                    <a class="p-news-category__link" href="/corporate/news/category/report/">
+                                        <span class="p-news-category__text">レポート</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="p-news-category__select u-use--sp">
+                                <select class="p-news-category__selectbox">
+                                    <option value="/corporate/news/">すべて</option>
+                                    <option value="/corporate/news/category/notice/">お知らせ</option>
+                                    <option value="/corporate/news/category/release/">プレスリリース</option>
+                                    <option value="/corporate/news/category/research/">調査</option>
+                                    <!--<option value="/corporate/news/category/column/">コラム</option>-->
+                                    <option value="/corporate/news/category/report/">レポート</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-section--lv1">
+                    <div class="p-button-layout">
+                        <a class="p-button-layout__element c-button c-button--green" href="#" id="js-show-card">
+                            Load More
+                        </a>
+                    </div>
+                </div>
+
+            </div><!-- /.l-single__inner-->
+        </div><!-- /.l-single-->
+    </div><!-- /.l-content-wrapper-->
+
+</body>
+</html>
+
+

@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "退会申请";
+}
+
+<div class="myroomPhotoInfo">
+    <div class="MyRoomAddDiv">
+        <form id="theform" enctype="multipart/form-data">
+            <input type="hidden" id="Id" name="Id" value="@ViewBag.Id" />
+            <p>
+                <label>
+                    退会申请，将注销账号，请确认是否要这么做？
+                </label>
+            </p>
+            <p>
+                <button class="ic_shoulei hide_txt png btn btn-primary btn-lg margin-left200" type="button" onclick="subConfirme()">退会申请</button>
+            </p>
+        </form>
+    </div>
+</div>
+
+<script>
+    function subConfirme() {
+        if (confirm("退会申请，将注销账号，请确认是否要这么做？")) {
+            $.ajax({
+                url: "/MyRoom/Quitters",
+                type: "post",
+                data: $('#theform').serialize(),
+                dataType: "json",
+                success: function (data) {
+                    if (!data.success) {
+                        alert(data.message);
+                    } else {
+                        window.location.href = "/Account/Login";
+                    }
+                },
+                error: function (e) {
+                    console.log("系统出错");
+                }
+            })
+        }
+    }
+</script>

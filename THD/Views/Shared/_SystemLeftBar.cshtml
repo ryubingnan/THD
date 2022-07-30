@@ -1,0 +1,61 @@
+﻿@{
+    var controllerName = Context.Request.RouteValues["Controller"]?.ToString();
+}
+
+@* 后台管理 *@
+
+@* 左边界 *@
+<div class="homeMyRoomLeftArea">
+    @if (controllerName.Equals("system", StringComparison.OrdinalIgnoreCase))
+    {
+        <ul>
+            <li style="background-color: #666666; color: #ffffff; width: 100%; line-height: 25px; vertical-align: middle; text-align: center; font-size: 15px;">案件管理</li>
+            <li>
+                <a id="LinkButton1" asp-area="" asp-controller="System" asp-action="AddItListInfo" asp-route-Id="">案件掲載</a>
+            </li>
+            <li>
+                <a id="LinkButton4" asp-area="" asp-controller="System" asp-action="ItListInfoList">案件一覧</a>
+            </li>
+            <li>
+            <li style="background-color: #666666; color: #ffffff; width: 100%; line-height: 25px; vertical-align: middle; text-align: center; font-size: 15px;">エンジニア管理</li>
+            <li>
+                <a id="LinkButton9" asp-area="" asp-controller="System" asp-action="TourList">履歴記載</a>
+            </li>
+            <li>
+                <a id="LinkButton10" asp-area="" asp-controller="System" asp-action="StayList">履歴一覧</a>
+            </li>
+            @if (User.IsInRole("admin"))
+            {
+                <li style="background-color: #666666; color: #ffffff; width: 100%; line-height: 25px; vertical-align: middle; text-align: center; font-size: 15px;">管理者</li>
+                <li>
+                    <a id="LinkButton27" asp-area="" asp-controller="System" asp-action="Member">通販会員</a>
+                </li>
+                <li>
+                    <a id="LinkButton27" asp-area="" asp-controller="System" asp-action="Technician">登峰会員</a>
+                </li>
+                <li>
+                    <a id="LinkButton28" asp-area="" asp-controller="System" asp-action="CorporateList">お問合せ管理</a>
+                </li>
+            }
+        </ul>
+    }
+    else if (controllerName.Equals("admin", StringComparison.OrdinalIgnoreCase))
+    {
+        <ul>
+            <li style="background-color: #666666; color: #ffffff; width: 100%; line-height: 25px; vertical-align: middle; text-align: center; font-size: 15px;">社内管理</li>
+            <li>
+                <a id="ctl00_body_LinkButton1" asp-area="" asp-controller="MyRoom" asp-action="MemberInfo">会員管理</a>
+            </li>
+            <li>
+                <a id="ctl00_body_LinkButton2" asp-area="" asp-controller="MyRoom" asp-action="Photo">お問合わせ管理</a>
+            </li>
+            <li>
+                <a id="ctl00_body_LinkButton3" asp-area="" asp-controller="MyRoom" asp-action="PasswordChange">掲載管理</a>
+            </li>
+            <li>
+                <a id="ctl00_body_LinkButton4" asp-area="" asp-controller="MyRoom" asp-action="Quitters">実績管理</a>
+            </li>
+        </ul>
+    }
+</div>
+

@@ -1,0 +1,40 @@
+﻿@section Styles{
+<style>
+    #main {
+        background-image: url("/imgs/banner8.jpg");
+        width: 100%;
+        height: 560px;
+        max-height: 600px;
+        margin: 0;
+        padding-top: 60px;
+    }
+
+        #main > table {
+            width: 600px;
+            height: 300px;
+            margin-top: 60px;
+            margin-left: 150px;
+            position: absolute;
+            text-align: center;
+        }
+</style>
+}
+
+<div id="main">
+    <table>
+        <tr>
+            <td>
+                <h4 id="time">您的会员申请提交成功。现在您已经是我们的临时会员。</h4>
+                <h6>我们会审核您的注册信息，审核成功后，您将成为富士的正式会员。<br />审核结果，请确认您的注册邮箱，谢谢您的合作。</h6>                
+            </td>
+        </tr>
+    </table>
+</div>
+
+@section Scripts{
+<script>
+    createVueApp({
+        
+    })
+</script>
+}

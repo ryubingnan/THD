@@ -1,0 +1,1799 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+}
+
+.float {
+    float: left;
+}
+
+.pager {
+    margin-top: 100px;
+    width: 100%;
+}
+
+    .pager li {
+        margin-left: 30px;
+        padding-right: 30px;
+    }
+
+.iptDate {
+    width: 300px;
+    height: 46px;
+    float: left;
+    position: absolute;
+    z-index: 10000;
+    right: 360px;
+    top: 110%;
+}
+
+.jobIptDate {
+    width: 270px;
+    height: 46px;
+}
+
+TextBox {
+    border: 1px solid #e0e0e0;
+}
+
+.margin-left120 {
+    margin-left: 120px;
+}
+
+.marginLeft100px {
+    margin-left: 100px;
+}
+
+.marginLeft200px {
+    margin-left: 200px;
+}
+
+a {
+    color: #3c3c3c;
+}
+
+.txtNum {
+    border-top: 1px solid #999999;
+    border-bottom: 1px solid #999999;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    padding: 0 3px;
+}
+
+.txtSubtraction, .txtAddition {
+    width: 32px;
+    line-height: 24px;
+    background-color: #999999;
+    color: #e0e0e0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.txtTotalPrice {
+    border: none;
+    width: 90px;
+    height: 40px;
+}
+
+.iptDel {
+    width: 50px;
+    line-height: 10px;
+    border: 1px solid #999999;
+    padding: 6px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    width: auto;
+    margin: 0 auto;
+    /*text-align: center;*/
+    color: #3c3c3c;
+    list-style: none;
+    font: 12px/1.5 arial,"\5FAE\8F6F\96C5\9ED1",verdana,tahoma,"Hiragino Sans GB","\5b8b\4f53";
+    /*background-color:#f9f9f9;*/
+    /*background-color: #ffc30d;*/
+}
+
+.img:hover {
+    background: #ffc30d;
+    border: 1px solid #ffc30d;
+    box-shadow: 12px 12px 15px rgba(9,3,6,0.6);
+}
+
+.img-to:hover {
+    background: #ffffff;
+    border: 1px solid #ffffff;
+    box-shadow: 0 3px 9px rgba(12,1,6,0.9);
+}
+
+.img-tu:hover {
+    background: #ffffff;
+    border: 1px solid #ff3d00;
+    box-shadow: 0 0px 6px rgba(12,1,6,0.3);
+    box-shadow: 2px 2px 5px #bbb;
+}
+
+.CountryArea {
+    margin: auto;
+    width: 100%;
+    height: 60px;
+    margin-top: 30px;
+}
+
+    .CountryArea ul {
+        margin: auto;
+        width: 90%;
+    }
+
+        .CountryArea ul li {
+            width: 10%;
+            float: left;
+            font-size: 24px;
+        }
+
+            .CountryArea ul li :first-child {
+                width: 21px;
+                height: 21px;
+            }
+
+.topPageLogo {
+    margin: auto;
+    margin-top: 60px;
+    width: 100%;
+    height: 120px;
+}
+
+    .topPageLogo table {
+        margin: auto;
+        width: 60%;
+        height: 120px;
+    }
+
+        .topPageLogo table tr td {
+            text-align: center;
+            font-size: 36px;
+        }
+
+.commTopTourTitle {
+    width: 200px;
+    float: right;
+    z-index: 10;
+    position: absolute;
+    top: 100px;
+    right: 30%;
+}
+
+table {
+    margin: 0% 0% 0% 0%;
+    border: 0px;
+    font-size: 12px;
+}
+
+/*div {
+    margin: 0% 0% 0% 0%;
+    margin: 0 auto;
+    padding: 0;
+}*/
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+li {
+    margin: 0;
+    padding: 0;
+}
+
+.commonSearchArea {
+    width: 80%;
+    margin: auto;
+    margin-top: 120px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+.commonSearchBarArea {
+    margin: auto;
+    width: 96%;
+    height: auto;
+}
+
+.commonSearchBarLeftArea {
+    width: 15%;
+    height: 1000px;
+    float: left;
+    background-color: #ffffff;
+}
+
+    .commonSearchBarLeftArea p {
+        width: 100%;
+        line-height: 20px;
+        background-color: #00A600;
+        margin: 0px;
+        color: #ffffff;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .commonSearchBarLeftArea ul {
+        list-style: none;
+        text-align: left;
+        padding: 5px;
+        width: 100%;
+        height: 200px;
+    }
+
+        .commonSearchBarLeftArea ul li {
+            margin: 10px;
+            width: 37%;
+            float: left;
+        }
+
+a:link {
+    color: #3c3c3c;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #3c3c3c;
+    text-decoration: none;
+}
+
+a:active {
+    color: #3c3c3c;
+    position: relative;
+    text-decoration: none;
+}
+
+a:hover {
+    position: relative;
+    color: #3c3c3c;
+    text-decoration: none;
+}
+
+.navTopArea {
+    width: 100%;
+    height: 24px;
+    display: block;
+    color: #e0e0e0;
+    font-size: 12px;
+    margin: auto;
+    background-color: #666666;
+    padding-top: 3px;
+}
+
+    .navTopArea ul {
+        padding: 0px 30px 0px 0px;
+    }
+
+        .navTopArea ul li a {
+            color: #e0e0e0;
+        }
+
+        .navTopArea ul li {
+            list-style: none;
+            float: right;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+    .navTopArea table {
+        width: 96%;
+    }
+
+        .navTopArea table ul {
+            width: 100%;
+        }
+
+            .navTopArea table ul li {
+                width: 7%;
+                height: 15px;
+                float: left;
+                padding: 3px;
+            }
+
+                .navTopArea table ul li:hover {
+                    color: #ffffff;
+                }
+
+.commRightBar {
+    width: 30px;
+    height: 100%;
+    margin: 0% 0% 0% 0%;
+    position: absolute;
+    position: fixed;
+    right: 0%;
+    top: 0%;
+    background-color: #3c3c3c;
+    color: #ffffff;
+    text-align: center;
+    z-index: 3;
+}
+
+.rightMenuLogo1 {
+    margin-top: 250px;
+}
+
+.rightMenuLogo2 {
+    margin-top: 50px;
+}
+
+.rightMenuLogo3 {
+    margin-top: 50px;
+}
+
+.homeNavigationBarBottomArea {
+    width: 100%;
+    height: 20px;
+    display: block;
+    padding-top: 20px;
+    /*background-color: #ff3d00;*/
+}
+
+    .homeNavigationBarBottomArea table {
+        width: 100%;
+        margin-top: 90px;
+        /*background-color: #ff3d00;*/
+    }
+
+        .homeNavigationBarBottomArea table tr td {
+            /*width: 10%;*/
+            color: #ffffff;
+            text-align: right;
+        }
+
+    .homeNavigationBarBottomArea ul {
+        width: 100%;
+        height: 20px;
+    }
+
+        .homeNavigationBarBottomArea ul li {
+            position: absolute;
+        }
+
+.homeSearchArea {
+    width: 50%;
+    height: 20px;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.homeTopImgArea {
+    margin-top: 100px;
+}
+
+
+.homeAskPriceInputBox table {
+    margin: auto;
+    margin-top: 20px;
+    width: 98%;
+    height: 300px;
+    border: 0;
+}
+
+    .homeAskPriceInputBox table span {
+        float: left;
+    }
+
+.homeAskingPriceTopArea {
+    width: 52%;
+    float: left;
+    position: absolute;
+    top: 160px;
+    background-color: #ffffff;
+    opacity: 0.9;
+    filter: alpha(opacity=50);
+    margin: 10px;
+    font-weight: bold;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 5px 5px 0 0;
+    border-bottom: 0px;
+}
+
+.homeAskingPriceArea {
+    width: 52%;
+    height: 330px;
+    background-color: #ffffff;
+    float: left;
+    position: absolute;
+    top: 199px;
+    opacity: 0.9;
+    filter: alpha(opacity=50);
+    margin: 10px;
+    font-weight: bold;
+    border-radius: 0 0 5px 5px;
+    border-bottom: 0px;
+}
+
+    .homeAskingPriceArea ul {
+        font-weight: bold;
+        border-bottom: 0px;
+    }
+
+.homeAskingPriceListArea {
+    width: 85%;
+    height: 400px;
+    background-color: #ffffff;
+}
+
+    .homeAskingPriceListArea ul {
+        width: 100%;
+        list-style: none;
+        height: 35px;
+        vertical-align: middle;
+        margin: auto;
+        margin-top: 10px;
+    }
+
+        .homeAskingPriceListArea ul li {
+            width: 20%;
+            line-height: 25px;
+            float: left;
+            text-align: center;
+            vertical-align: middle;
+            padding-top: 5px;
+        }
+
+            .homeAskingPriceListArea ul li:first-child {
+                text-align: center;
+            }
+
+.helpAskingPriceListArea {
+    width: 100%;
+    height: 600px;
+    background-color: #ffffff;
+}
+
+    .helpAskingPriceListArea ul {
+        width: 100%;
+        list-style: none;
+        height: 45px;
+        vertical-align: middle;
+        margin: auto;
+    }
+
+        .helpAskingPriceListArea ul li {
+            width: 20%;
+            line-height: 25px;
+            float: left;
+            text-align: center;
+            vertical-align: middle;
+            padding-top: 5px;
+        }
+
+            .helpAskingPriceListArea ul li:first-child {
+                text-align: center;
+            }
+
+.homeLinkBarArea {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    color: #ffffff;
+    background-color: #3c3c3c;
+    display: block;
+    margin: auto;
+    position: relative;
+    background-image: url('../imgs/bg1.jpg');
+    bottom: 0;
+}
+
+    .homeLinkBarArea a:link {
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    .homeLinkBarArea a:visited {
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    .homeLinkBarArea a:active {
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    .homeLinkBarArea a:hover {
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+.homeLinkBarTableTopArea {
+    width: 98%;
+    height: 250px;
+    margin: auto;
+    text-align: center;
+    bottom: 0;
+    border: 0;
+}
+
+    .homeLinkBarTableTopArea h3 {
+        color: #f0f0f0;
+        text-align: left;
+        padding: 20px;
+    }
+
+.homeLinkBarTableBottomArea {
+    width: 95%;
+    height: 50px;
+    margin: auto;
+    margin-top: 10px;
+    text-align: left;
+}
+
+    .homeLinkBarTableBottomArea tr td {
+        width: 10%;
+        padding: 15px;
+    }
+
+.homeLink2BarArea {
+    width: 100%;
+    height: 300px;
+    text-align: center;
+    color: #ffffff;
+    bottom: 0;
+    background-color: #3c3c3c;
+    display: block;
+    margin-bottom: 0px;
+    position: relative;
+    margin-top: 100px;
+}
+
+.homeLink2BarTopArea {
+    width: 92%;
+    height: auto;
+    margin: auto;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    border: 0;
+}
+
+.homeLink2BarArea a:link {
+    color: #999999;
+    text-decoration: none;
+}
+
+.homeLink2BarArea a:visited {
+    color: #999999;
+    text-decoration: none;
+}
+
+.homeLink2BarArea a:active {
+    color: #999999;
+    position: relative;
+    text-decoration: none;
+}
+
+.homeLink2BarArea a:hover {
+    position: relative;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.homeLink2BarTopArea h3 {
+    color: #999999;
+    text-align: left;
+}
+/*会员登陆窗口*/
+.homeLoginBarArea {
+    margin: auto 0;
+    width: 100%;
+    height: 560px;
+    max-height: 600px;
+    background-image: url("../images/banner8.jpg");
+    /*background-repeat: no-repeat;*/
+    /*background-color: #ffffff;*/
+}
+/*公司企业登陆窗口*/
+.companyLoginBarArea {
+    width: 100%;
+    height: 500px;
+}
+
+    .companyLoginBarArea table {
+        margin: 0 auto;
+        margin-top: 120px;
+        width: 60%;
+        height: 300px;
+        text-align: center;
+    }
+
+        .companyLoginBarArea table tr td {
+            text-align: left;
+        }
+
+.loginIDTextBox {
+    margin-left: 20px;
+    height: 56px;
+}
+
+.loginPWTextBox {
+    margin-left: 20px;
+    height: 56px;
+}
+
+.homeLoginBarArea table {
+    width: 600px;
+    height: 300px;
+    margin-top: 60px;
+    margin-left: 150px;
+    /*background-color: #ffffff;*/
+    position: absolute;
+    text-align: center;
+}
+
+.homeRegisterBarArea {
+    width: 100%;
+    height: auto;
+    background-image: url("../images/backreg.gif");
+    background-repeat: no-repeat;
+    padding-top: 50px;
+}
+
+    .homeRegisterBarArea table {
+        width: 650px;
+        height: auto;
+        background-color: #ffffff;
+        margin-left: 60px;
+        color: #3c3c3c;
+    }
+
+        .homeRegisterBarArea table tr td {
+            height: 60px;
+        }
+
+        .homeRegisterBarArea table span {
+            float: left;
+        }
+
+    .homeRegisterBarArea p {
+        width: 50%;
+        height: 12px;
+        text-align: left;
+        margin: 100px;
+    }
+
+.homeMyRoomArea {
+    width: 100%;
+    height: 4500px;
+    background-color: #ffffff;
+}
+
+.homeMyRoomLeftArea {
+    margin: 100px auto auto 10px;
+    width: 15%;
+    height: auto;
+    float: left;
+    border: 1px solid #3c3c3c;
+}
+
+    .homeMyRoomLeftArea ul {
+        width: 100%;
+    }
+
+        .homeMyRoomLeftArea ul li {
+            list-style: none;
+            text-align: center;
+            vertical-align: bottom;
+            font-size: 12px;
+            width: 50%;
+            height: 50px;
+            float: left;
+            padding: 10px;
+        }
+
+    .homeMyRoomLeftArea p {
+        width: 100%;
+        line-height: 30px;
+        background-color: #666666;
+        font-size: 15px;
+        color: #ffffff;
+        vertical-align: middle;
+    }
+
+    .homeMyRoomLeftArea a:hover {
+        color: #ae0000;
+        top: 1px;
+    }
+
+.homeMyRoomRightArea {
+    width: 82%;
+    height: auto;
+    margin: 0% 0% 0% 2%;
+    float: right;
+}
+
+    .homeMyRoomRightArea table {
+        width: 100%;
+        height: auto;
+        margin: auto;
+        float: left;
+    }
+
+        .homeMyRoomRightArea table tr td {
+            /*border: 1px solid #999999;
+            height: 50px;*/
+        }
+
+#member_zifu {
+    width: 800px;
+    height: 1200px;
+    margin: 0% 0% 0% 10%;
+    background-image: url(../images/bdbj3.gif);
+    background-repeat: no-repeat;
+}
+
+/*阴影*/
+.yinying {
+    border: 1px solid #f0f0f0;
+    text-align: center;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-box-shadow: #999 0px 0px 10px;
+    -moz-box-shadow: #666 0px 0px 10px;
+    box-shadow: #999 0px 0px 10px;
+}
+
+.top1 {
+    margin: 0% 0% 0% 0%;
+    width: 100%;
+    height: auto;
+    font-size: 12px;
+    text-decoration: none;
+    /*background-color: #ff3d00;*/
+}
+
+    .top1 ul {
+        list-style: none;
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        margin-top: 20px;
+        text-decoration: none;
+        text-align: center;
+        margin: 0% 0% 0% 0%;
+        vertical-align: middle;
+    }
+
+        .top1 ul li {
+            display: inline;
+            margin: 30px;
+            font-size: 12px;
+            text-align: center;
+            vertical-align: top;
+        }
+
+            .top1 ul li a {
+                color: #3c3c3c;
+                text-decoration: none;
+                vertical-align: middle;
+            }
+
+.top2 {
+    margin: 0% 0% 0% 0%;
+    width: 100%;
+    height: auto;
+    text-decoration: none;
+    vertical-align: middle;
+    /*background-color: #ff3d00;*/
+}
+
+    .top2 ul {
+        width: 100%;
+        height: 49px;
+        line-height: 56px;
+        margin-top: 0px;
+        text-decoration: none;
+        vertical-align: middle;
+        text-align: center;
+    }
+
+        .top2 ul li:first-child {
+            width: 190px;
+            padding-right: 10px;
+        }
+
+        .top2 ul li {
+            display: inline-block;
+            margin-right: 10px;
+            height: 49px;
+            font-size: 26px;
+            font-weight: bolder;
+            text-align: center;
+            width: 150px;
+            vertical-align: middle;
+            float: left;
+        }
+
+            .top2 ul li a:link {
+                color: #3c3c3c;
+                text-decoration: none;
+                font-weight: bold;
+            }
+
+            .top2 ul li a:visited {
+                color: #3c3c3c;
+            }
+
+            .top2 ul li a:active {
+                color: #3c3c3c;
+                text-decoration: none;
+                position: relative;
+            }
+
+            .top2 ul li a:hover {
+                text-decoration: none;
+                position: relative;
+                color: #999999;
+            }
+
+.login1 {
+    width: auto;
+    height: auto;
+    margin: 5% 0% 0% 0%;
+}
+
+.imgTitle {
+    z-index: 1;
+    position: absolute;
+}
+
+.homemarketingBarArea {
+    width: 85%;
+    height: 560px;
+    background-color: #ffffff;
+    margin: auto;
+    margin-top: 800px;
+}
+
+    .homemarketingBarArea ul {
+        list-style: none;
+        cursor: pointer;
+    }
+
+        .homemarketingBarArea ul li {
+            width: 250px;
+            height: 250px;
+            text-align: center;
+            color: #3c3c3c;
+            border: 1px solid #e0e0e0;
+            float: left;
+            margin: 15px;
+        }
+
+            .homemarketingBarArea ul li img {
+                margin-top: 5px;
+            }
+
+.homeInfoBarArea {
+    width: 85%;
+    height: 1000px;
+    background-color: #ffffff;
+    position: relative;
+}
+
+    .homeInfoBarArea table {
+        border: 0.1px solid #f0f0f0;
+        margin-bottom: 10px;
+    }
+
+        .homeInfoBarArea table a:hover {
+            color: #00A600;
+            text-decoration: underline;
+        }
+
+    .homeInfoBarArea p {
+        width: 150px;
+        line-height: 20px;
+        background-color: #00A600;
+        color: #ffffff;
+        position: absolute;
+        z-index: 100;
+        margin: 10px;
+    }
+
+.calendarTopArea {
+    width: 95%;
+    height: 500px;
+    background-color: #ffffff;
+    filter: alpha(opacity=50);
+    opacity: 0.9;
+}
+
+.homeTourModelTbl {
+    width: 90%;
+    height: 600px;
+}
+
+    .homeTourModelTbl tr {
+        height: 60px;
+    }
+
+    .homeTourModelTbl span {
+        float: left;
+        padding-left: 5px;
+    }
+
+.homeBtLogoArea {
+    width: 100%;
+    height: 100px;
+}
+
+/*入驻申请界面*/
+.homesRegister {
+    width: 100%;
+    height: 900px;
+    margin: auto;
+    background-color: #ffffff;
+    padding-top: 60px;
+}
+
+    .homesRegister ul {
+        width: 60%;
+        height: 30px;
+        margin: auto;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+        .homesRegister ul li {
+            float: left;
+            width: 129px;
+            font-size: 15px;
+        }
+
+    .homesRegister table {
+        margin: auto;
+        margin-top: 30px;
+        width: 90%;
+        height: 300px;
+    }
+        /*.homesRegister table :first-child {
+        width: 15px;
+        height: 15px;
+        margin: auto;
+        color: #3c3c3c;
+        text-align: left;
+    }
+    .homesRegister table tr td:first-child {
+        width: 90px;
+    }*/
+        .homesRegister table tr {
+            border: 1px solid #e0e0e0;
+        }
+
+            .homesRegister table tr td {
+                padding-left: 5px;
+                line-height: 50px;
+                text-align: center;
+                font-size: 16px;
+                vertical-align: middle;
+                border: 1px solid #e0e0e0;
+            }
+
+                .homesRegister table tr td h3 {
+                    padding-left: 12px;
+                }
+
+    .homesRegister p {
+        width: 60%;
+        height: 90px;
+        margin: auto;
+        margin-top: 60px;
+        padding-top: 30px;
+    }
+
+.homeLinkInfo {
+    width: 100%;
+    height: 500px;
+    text-align: left;
+    background-color: #ffffff;
+    margin-top: 150px;
+    margin-bottom: 100px;
+}
+
+    .homeLinkInfo h2 {
+        width: 100%;
+        text-align: center;
+        margin-top: 100px;
+        padding-top: 50px;
+    }
+
+    .homeLinkInfo h4 {
+        padding: 50px;
+    }
+
+.homeTopArea {
+    width: 100%;
+    height: 900px;
+    margin-top: 30px;
+}
+
+    .homeTopArea ul {
+        list-style: none;
+        cursor: pointer;
+        margin: auto;
+        width: 100%;
+    }
+
+        .homeTopArea ul li {
+            width: 24%;
+            height: 250px;
+            text-align: center;
+            color: #3c3c3c;
+            border: 1px solid #666666;
+            float: left;
+            margin-left: 7%;
+            margin-bottom: 30px;
+            /*background-color: #ffc30d;*/
+        }
+
+            .homeTopArea ul li img {
+                margin-top: 5px;
+            }
+
+            .homeTopArea ul li table {
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                color: #3c3c3c;
+            }
+
+.homeTopInfo {
+    width: 100%;
+    height: 1600px;
+    margin-top: 1600px;
+    display: block;
+}
+
+.homeTopInfo1 {
+    width: 100%;
+    height: 500px;
+}
+
+    .homeTopInfo1 table {
+        width: 100%;
+        height: 500px;
+        background-color: #f0f0f0;
+    }
+
+    .homeTopInfo1 h1 {
+        /*color: #ff3d00;*/
+        font-weight: bold;
+    }
+
+.homeTopInfo2 {
+    width: 100%;
+    height: 500px;
+}
+
+    .homeTopInfo2 table {
+        width: 100%;
+        height: 500px;
+    }
+
+    .homeTopInfo2 h1 {
+        /*color: #ff3d00;*/
+        font-weight: bold;
+    }
+
+.modalBody {
+    text-align: left;
+    padding: 15px;
+}
+
+.hotPage p {
+    position: absolute;
+    float: left;
+    top: 160px;
+    left: 60px;
+}
+
+.topVideosArea {
+    margin: auto;
+    width: 600px;
+    line-height: 100px;
+    position: absolute;
+    top: 210px;
+    left: 30%;
+    opacity: 0.9;
+    border-radius: 6px;
+    font-size: 50px;
+    text-align: center;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    cursor: pointer;
+}
+
+.myroomMemberInfo {
+    margin: auto;
+    margin-top: 30px;
+    width: 100%;
+    height: auto;
+}
+
+    .myroomMemberInfo p {
+        margin: auto;
+        width: 100%;
+        text-align: left;
+    }
+
+    .myroomMemberInfo table {
+        width: 90%;
+        height: auto;
+        border: none;
+        margin-left: 10px;
+    }
+
+        .myroomMemberInfo table tr {
+            border: none;
+            border-bottom: solid 1px #e0e0e0;
+        }
+
+            .myroomMemberInfo table tr td {
+                width: 90%;
+                height: 90px;
+                vertical-align: bottom;
+                text-align: left;
+                padding-left: 10px;
+                font-size: 15px;
+            }
+
+                .myroomMemberInfo table tr td:last-child {
+                    text-align: right;
+                }
+
+.MyRoomAddDiv {
+    width: 100%;
+    height: auto;
+}
+
+    .MyRoomAddDiv table {
+        margin: 30px;
+        width: 90%;
+        height: auto;
+        color: #3c3c3c;
+        font-size: 15px;
+    }
+
+        .MyRoomAddDiv table tr td {
+            padding-bottom: 15px;
+            padding-left: 10px;
+        }
+
+            .MyRoomAddDiv table tr td:first-child {
+                width: 100px;
+            }
+
+    .MyRoomAddDiv p {
+        width: 100%;
+        height: 12px;
+        text-align: left;
+        margin-top: 30px;
+    }
+
+/*企业系统登陆页面*/
+.homeCompanySystemLoginBar {
+    width: 100%;
+    height: 360px;
+    background-color: #ffffff;
+    padding-top: 60px;
+}
+
+    .homeCompanySystemLoginBar table {
+        margin: auto;
+        width: auto;
+        height: 210px;
+    }
+
+        .homeCompanySystemLoginBar table tr td {
+            text-align: center;
+        }
+
+.Message {
+    margin: auto 0;
+    width: 100%;
+    height: auto;
+}
+
+    .Message h2 {
+        margin: auto 0;
+        margin-top: 300px;
+    }
+
+.recommendArea {
+    width: 100%;
+    height: 900px;
+    margin-top: 1800px;
+}
+
+    .recommendArea ul {
+        margin: auto;
+        width: 90%;
+        list-style: none;
+    }
+
+        .recommendArea ul li {
+            float: left;
+            width: 20%;
+            margin-bottom: 30px;
+        }
+
+.listArea {
+    width: 96%;
+    position: absolute;
+    float: left;
+    top: 90%;
+    left: 1%;
+    z-index: 100;
+    background-color: #ffffff;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 5px 5px 0 0;
+}
+
+.listTop {
+    margin: auto;
+    width:auto;
+    opacity: 0.9;
+    filter: alpha(opacity=50);
+    font-weight: bold;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 5px 5px 0 0;
+    background-color: #ffffff;
+}
+
+    .listTop table {
+        margin: auto;
+        margin-bottom: 30px;
+        width: 90%;
+        height: 120px;
+        text-align: left;
+        font-size: 12px;
+    }
+
+    .listTop ul {
+        margin: auto;
+        width: 100%;
+    }
+
+.listInfo {
+    margin-bottom: 100px;
+    width: 93%;
+    height: 1200px;
+    background-color: #ffffff;
+}
+
+    .listInfo table {
+        margin: 0 auto;
+        border-bottom: 1px solid #f3f3f3;
+    }
+
+    .listInfo hr {
+        border-bottom: 0.3px solid #f0f0f0;
+    }
+
+.stayInfo {
+    width: 100%;
+    height: auto;
+    background-color: #ffffff;
+}
+
+.stayInfo1 {
+    width: 100%;
+}
+
+    .stayInfo1 table {
+        width: 80%;
+        height: auto;
+        margin: auto;
+        font-size: 15px;
+        text-align: left;
+    }
+
+        .stayInfo1 table tr td {
+            text-align: left;
+            padding: 3px;
+        }
+
+            .stayInfo1 table tr td span {
+                border: 1px solid #ffffff;
+                margin-left: 10px;
+                font-size: 12px;
+                color: #ffffff;
+                padding: 2px;
+                text-align: right;
+            }
+
+.stayInfo2 {
+    width: 80%;
+    height: auto;
+    margin-top: 30px;
+}
+
+    .stayInfo2 table {
+        width: 100%;
+        height: auto;
+        margin: auto;
+        font-size: 15px;
+    }
+
+        .stayInfo2 table tr td {
+            text-align: right;
+        }
+
+.stayInfo3 {
+    width: 80%;
+}
+
+    .stayInfo3 table {
+        margin: 0 auto;
+        width: 90%;
+        text-align: left;
+    }
+
+        .stayInfo3 table tr td {
+            font-size: 18px;
+            padding: 12px;
+        }
+
+.stayInfo5 {
+    width: 80%;
+    height: 600px;
+}
+
+    .stayInfo5 table {
+        margin: auto;
+        margin: 30px auto 0px auto;
+        width: 70%;
+    }
+
+
+.ticketInfo {
+    width: 100%;
+    height: auto;
+    background-color: #ffffff;
+}
+
+.ticketInfo1 {
+    width: 100%;
+}
+
+    .ticketInfo1 table {
+        width: 80%;
+        height: auto;
+        margin: auto;
+        font-size: 15px;
+        text-align: left;
+    }
+
+        .ticketInfo1 table tr td {
+            text-align: left;
+            padding: 3px;
+        }
+
+            .ticketInfo1 table tr td span {
+                border: 1px solid #ffffff;
+                margin-left: 10px;
+                font-size: 12px;
+                color: #ffffff;
+                padding: 2px;
+                text-align: right;
+            }
+
+.ticketInfo2 {
+    width: 80%;
+    height: auto;
+    margin-top: 30px;
+}
+
+    .ticketInfo2 table {
+        width: 100%;
+        height: auto;
+        margin: auto;
+        font-size: 15px;
+    }
+
+        .ticketInfo2 table tr td {
+            text-align: right;
+        }
+
+.ticketInfo3 {
+    width: 80%;
+}
+
+    .ticketInfo3 table {
+        margin: 0 auto;
+        width: 90%;
+        text-align: left;
+    }
+
+        .ticketInfo3 table tr td {
+            font-size: 18px;
+            padding: 12px;
+        }
+
+.ticketInfo5 {
+    width: 80%;
+    height: 600px;
+}
+
+    .ticketInfo5 table {
+        margin: auto;
+        margin: 30px auto 0px auto;
+        width: 70%;
+    }
+
+
+.foodInfo {
+    width: 100%;
+    height: auto;
+    background-color: #ffffff;
+}
+
+.foodInfo1 {
+    width: 100%;
+}
+
+    .foodInfo1 table {
+        width: 80%;
+        height: auto;
+        margin: auto;
+        font-size: 15px;
+        text-align: left;
+    }
+
+        .foodInfo1 table tr td {
+            text-align: left;
+            padding: 3px;
+        }
+
+            .foodInfo1 table tr td span {
+                border: 1px solid #ffffff;
+                margin-left: 10px;
+                font-size: 12px;
+                color: #ffffff;
+                padding: 2px;
+                text-align: right;
+            }
+
+.foodInfo2 {
+    width: 80%;
+    height: auto;
+    margin-top: 30px;
+}
+
+    .foodInfo2 table {
+        width: 100%;
+        height: auto;
+        margin: auto;
+        font-size: 15px;
+    }
+
+        .foodInfo2 table tr td {
+            text-align: right;
+        }
+
+.foodInfo3 {
+    width: 80%;
+}
+
+    .foodInfo3 table {
+        margin: 0 auto;
+        width: 90%;
+        text-align: left;
+    }
+
+        .foodInfo3 table tr td {
+            font-size: 18px;
+            padding: 12px;
+        }
+
+.foodInfo5 {
+    width: 80%;
+    height: 600px;
+}
+
+    .foodInfo5 table {
+        margin: auto;
+        margin: 30px auto 0px auto;
+        width: 70%;
+    }
+
+.pickupInfo {
+    width: 100%;
+    height: auto;
+    background-color: #ffffff;
+}
+
+.pickupInfo1 {
+    width: 100%;
+}
+
+    .pickupInfo1 table {
+        width: 80%;
+        height: auto;
+        margin: auto;
+        font-size: 15px;
+        text-align: left;
+    }
+
+        .pickupInfo1 table tr td {
+            text-align: left;
+            padding: 3px;
+        }
+
+            .pickupInfo1 table tr td span {
+                border: 1px solid #ffffff;
+                margin-left: 10px;
+                font-size: 12px;
+                color: #ffffff;
+                padding: 2px;
+                text-align: right;
+            }
+
+.pickupInfo2 {
+    width: 80%;
+    height: auto;
+    margin-top: 30px;
+}
+
+    .pickupInfo2 table {
+        width: 100%;
+        height: auto;
+        margin: auto;
+        font-size: 15px;
+    }
+
+        .pickupInfo2 table tr td {
+            text-align: right;
+        }
+
+.pickupInfo3 {
+    width: 80%;
+}
+
+    .pickupInfo3 table {
+        margin: 0 auto;
+        width: 90%;
+        text-align: left;
+    }
+
+        .pickupInfo3 table tr td {
+            font-size: 18px;
+            padding: 12px;
+        }
+
+.pickupInfo5 {
+    width: 80%;
+    height: 600px;
+}
+
+    .pickupInfo5 table {
+        margin: auto;
+        margin: 30px auto 0px auto;
+        width: 70%;
+    }
+
+.guideInfo {
+    width: 100%;
+    height: auto;
+    background-color: #ffffff;
+}
+
+.guideInfo1 {
+    width: 100%;
+}
+
+    .guideInfo1 table {
+        width: 80%;
+        height: auto;
+        margin: auto;
+        font-size: 15px;
+        text-align: left;
+    }
+
+        .guideInfo1 table tr td {
+            text-align: left;
+            padding: 3px;
+        }
+
+            .guideInfo1 table tr td span {
+                border: 1px solid #ffffff;
+                margin-left: 10px;
+                font-size: 12px;
+                color: #ffffff;
+                padding: 2px;
+                text-align: right;
+            }
+
+.guideInfo2 {
+    width: 80%;
+    height: auto;
+    margin-top: 30px;
+}
+
+    .guideInfo2 table {
+        width: 100%;
+        height: auto;
+        margin: auto;
+        font-size: 15px;
+    }
+
+        .guideInfo2 table tr td {
+            text-align: right;
+        }
+
+.guideInfo3 {
+    width: 80%;
+}
+
+    .guideInfo3 table {
+        margin: 0 auto;
+        width: 90%;
+        text-align: left;
+    }
+
+        .guideInfo3 table tr td {
+            font-size: 18px;
+            padding: 12px;
+        }
+
+.guideInfo5 {
+    width: 80%;
+    height: 600px;
+}
+
+    .guideInfo5 table {
+        margin: auto;
+        margin: 30px auto 0px auto;
+        width: 70%;
+    }
+
+.playInfo {
+    width: 100%;
+    height: auto;
+    background-color: #ffffff;
+}
+
+.playInfo1 {
+    width: 100%;
+}
+
+    .playInfo1 table {
+        width: 80%;
+        height: auto;
+        margin: auto;
+        font-size: 15px;
+        text-align: left;
+    }
+
+        .playInfo1 table tr td {
+            text-align: left;
+            padding: 3px;
+        }
+
+            .playInfo1 table tr td span {
+                border: 1px solid #ffffff;
+                margin-left: 10px;
+                font-size: 12px;
+                color: #ffffff;
+                padding: 2px;
+                text-align: right;
+            }
+
+.playInfo2 {
+    width: 80%;
+    height: auto;
+    margin-top: 30px;
+}
+
+    .playInfo2 table {
+        width: 100%;
+        height: auto;
+        margin: auto;
+        font-size: 15px;
+    }
+
+        .playInfo2 table tr td {
+            text-align: right;
+        }
+
+.playInfo3 {
+    width: 80%;
+}
+
+    .playInfo3 table {
+        margin: 0 auto;
+        width: 90%;
+        text-align: left;
+    }
+
+        .playInfo3 table tr td {
+            font-size: 18px;
+            padding: 12px;
+        }
+
+.playInfo5 {
+    width: 80%;
+    height: 600px;
+}
+
+    .playInfo5 table {
+        margin: auto;
+        margin: 30px auto 0px auto;
+        width: 70%;
+    }
+.other {
+    min-width: 80px;
+    height: 100%;
+    background: rgb(61,61,61);
+    border-radius: 3px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: all .3s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-140%);
+    color: white;
+    padding: 5px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    box-sizing: border-box;
+}
+
+    .other::after {
+        position: absolute;
+        content: '';
+        width: 0px;
+        height: 0px;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        border-left: 12px solid rgb(61,61,61);
+        border-radius: 2px;
+        right: 0;
+        top: 50%;
+        transform: translate(60%, -55%);
+    }
+
+.right-menu {
+    position: relative !important;
+    height: 45px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .3s ease-in-out;
+}
+.right-menu {
+    margin-top: 40px;
+}
+.right-menu:nth-of-type(1){
+    margin-top: 230px;
+}
+.right-menu:hover {
+    background: #ed145b;
+}
+    
+.right-menu:hover .other {
+    visibility: visible;
+    transform: translateX(-100%);
+    opacity: 1;
+}
+.s-items-center{
+    display: flex;
+    flex-direction: column;
+}

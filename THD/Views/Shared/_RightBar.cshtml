@@ -1,0 +1,46 @@
+﻿<div id="divTarget" class="h-full fixed top-0 right-0 w-10 text-white z-50" style="background: #3c3c3c">
+    <div class="flex flex-col items-center s-items-center">
+        <a href="/cart" class="right-menu r1" onmouseover="enter(0)">
+            <span class="glyphicon glyphicon-shopping-cart " style="font-size: 20px; color: #ffffff">
+                <br>
+                <span id="ctl00_lbShoppingCartNum " style="color:White;font-size:9pt;"></span>
+            </span>
+            <div class="other">
+                购物车
+            </div>
+
+        </a>
+        <a href="#" class="right-menu r2">
+            <span class="glyphicon glyphicon-signal " style="font-size: 20px; color: #ffffff">
+                <br>
+                <span id="ctl00_Label2" style="color:White;font-size:9pt;"></span>
+            </span>
+            <div class="other">
+                您的积分
+            </div>
+        </a>
+        <a href="#" class="right-menu r3">
+            <span class="glyphicon glyphicon-qrcode " style="font-size: 20px; color: #ffffff"></span>
+            <div class="other">
+                二维码
+            </div>
+        </a>
+    </div>
+</div>
+<script src="/lib/jquery/dist/jquery.min.js"></script>
+<script>
+    const urlList = [
+        'http://localhost:5000/',
+        'http://www.cxqd-japan.com/',
+        'http://localhost:5000/Account/Register',
+        'http://www.cxqd-japan.com/Account/Register',
+        'http://localhost:5000/Account/Login',
+        'http://www.cxqd-japan.com/Account/Login',
+    ]
+    if (urlList.includes(window.location.href)) {
+        $('#divTarget').css('display', 'none')
+    } else {
+        $('#divTarget').css('display', 'block')
+    }
+</script>
+

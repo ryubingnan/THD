@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "照片修改";
+}
+
+<div class="myroomPhotoInfo">
+    <p style="width: 100%; text-align: left;">■照片修改</p>
+    <form id="theform" asp-area="" asp-controller="MyRoom" asp-action="Photo" enctype="multipart/form-data" method="post">
+        <input type="hidden" id="Id" name="Id" value="@ViewBag.Id" />
+        <table>
+            <tr>
+                <td>照片</td>
+                <td>
+                    <img id="pic" src="@ViewBag.Pic" style="width:354px;height:236px;" />
+                    <input type="file" id="fileImg" name="fileImg" accept="image/png,image/jpeg,image/gif" onchange="viewImage(this,'pic')" />
+                </td>
+            </tr>
+        </table>
+        <p>
+            <button class="ic_shoulei hide_txt png btn btn-primary btn-lg margin-left200" type="submit">照片更新</button>
+        </p>
+    </form>
+</div>
+
+@section Scripts {
+    <script>
+        function viewImage(e, img) {
+            var file = $(e).prop('files')[0];
+            if (file) {
+                var reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onloadend = function (even) {
+                    $('#' + img).attr("src", even.currentTarget.result);
+                }
+            }
+        }
+    </script>
+}

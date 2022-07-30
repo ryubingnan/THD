@@ -1,0 +1,262 @@
+﻿body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    width: auto;
+    margin: 0 auto;
+    /*text-align: center;*/
+    color: #3c3c3c;
+    list-style: none;
+}
+
+/*div {
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+}
+*/
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+li {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #333333;
+    font-weight: bold;
+}
+
+.mobileTopImgArea {
+    margin-top: 50px;
+}
+
+.mobileLinkBarArea {
+    width: 100%;
+    height: 200px;
+    text-align: center;
+    color: #ffffff;
+    bottom: 0;
+    background-color: #3c3c3c;
+    display: block;
+    margin-top: 1000px;
+    margin-bottom: 0px;
+    position: relative;
+}
+
+    .mobileLinkBarArea a:link {
+        color: #999999;
+        text-decoration: none;
+    }
+
+    .mobileLinkBarArea a:visited {
+        color: #999999;
+        text-decoration: none;
+    }
+
+    .mobileLinkBarArea a:active {
+        color: #999999;
+        position: relative;
+        text-decoration: none;
+    }
+
+    .mobileLinkBarArea a:hover {
+        position: relative;
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+
+.mobileLinkBarTopArea {
+    width: 92%;
+    height: 200px;
+    margin: auto;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    border: 0;
+    font-size: 25px;
+}
+
+    .mobileLinkBarTopArea h3 {
+        color: #999999;
+        text-align: left;
+        padding: 5px;
+    }
+
+
+.mobileNavigationBarBottomArea {
+    width: 100%;
+    height: 350px;
+    display: block;
+    margin-bottom: 50px;
+    /*background-color: #ff3d00;*/
+}
+
+    .mobileNavigationBarBottomArea table {
+        width: 100%;
+        height: 350px;
+        text-align: center;
+        margin: auto;
+        font-size: 30px;
+    }
+
+.mobileNavigationBarTopArea {
+    width: 100%;
+    height: 45px;
+    display: block;
+    background-color: #666666;
+    color: #e0e0e0;
+    font-size: 12px;
+    margin: auto;
+}
+
+    .mobileNavigationBarTopArea ul li a {
+        color: #e0e0e0;
+    }
+
+    .mobileNavigationBarTopArea ul li {
+        list-style: none;
+        float: left;
+        margin-right: 40px;
+        cursor: pointer;
+        font-size: 30px;
+    }
+
+
+.mobileListBar {
+    width: 95%;
+    height: auto;
+    background-color: #ffffff;
+    position: relative;
+}
+.mobileListBar p {
+    width: 100%;
+    height: auto;
+    text-align:center;
+}
+    .mobileListBar table {
+        width: 98%;
+        height: auto;
+        text-align: left;
+        margin-bottom: 60px;
+        font-size: 30px;
+        border-bottom: 1px solid #999999;
+    }
+
+        .mobileListBar table a:hover {
+            color: #00A600;
+            text-decoration: underline;
+        }
+        .mobileListBar table tr td span {
+            font-size: 42px;
+            font-weight: bold;
+        }
+.mobileInfoBar {
+    width: 95%;
+    height: auto;
+    background-color: #ffffff;
+    position: relative;
+}
+    .mobileInfoBar table {
+        width: 98%;
+        height: auto;
+        margin-bottom: 10px;
+        text-align: left;
+        margin: auto;
+    }
+        .mobileInfoBar table tr {
+            border-bottom: 1px solid #999999;
+            height: 190px;
+        }
+            .mobileInfoBar table tr td {
+                font-size: 42px;
+                font-weight: bold; 
+                padding-top:30px;
+                padding-bottom:30px;
+            }
+.mobileLogoArea {
+    margin: auto;
+    margin-top: 100px;
+}
+
+.mobileLoginBarArea {
+    margin: auto;
+    width: 100%;
+    height: 800px;
+}
+
+    .mobileLoginBarArea table {
+        margin: auto;
+        width: 100%;
+        height: 600px;
+        text-align: center;
+    }
+
+.mobileLoginIDTextBox {
+    margin-left: 1%;
+}
+
+.mobileLoginPWTextBox {
+    margin-left: 1%;
+}
+
+.mobileNavigationBarTopArea {
+    width: 100%;
+    height: 60px;
+    color: #e0e0e0;
+    font-size: 12px;
+    margin: auto;
+    background-color: #666666;
+    padding-top: 3px;
+}
+
+    .mobileNavigationBarTopArea ul li a:hover {
+        color: #00A600;
+        padding:3px;
+    }
+
+    .mobileNavigationBarTopArea ul {
+        width:100%;
+        list-style: none;
+    }
+
+        .mobileNavigationBarTopArea ul li {
+            padding: 9px;
+            float:right;
+        }
+        .mobileNavigationBarTopArea ul li span {
+            margin-right:3px;
+        }
+.mobileRegisterBarArea {
+    width:100%;
+    height:auto;
+    margin-top:190px;
+    margin:auto;
+}
+.mobileRegisterBarArea table {
+    width: 100%;
+    height: auto;
+}
+    .mobileRegisterBarArea table tr {
+        height: 120px;
+    }
+    .mobileRegisterBarArea table tr td {
+        font-size:39px;
+    }
+        .mobileRegisterBarArea table tr td span :first-child {
+            width: 60px;
+            height: 40px;
+            color: #3c3c3c;
+            text-align: left;
+        }
+        .mobileRegisterBarArea table tr span :last-child {
+            width: 60px;
+            height: 40px;
+            color: #3c3c3c;
+            text-align: left;
+        }

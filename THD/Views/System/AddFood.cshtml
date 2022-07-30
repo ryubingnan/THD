@@ -1,0 +1,92 @@
+﻿@{
+    ViewData["Title"] = "案件一览";
+}
+<div class="memberInfo2" id="section-2">
+    <table>
+        <tr>
+            <td>会员名称：</td>
+            <td><input class="form-control" type="text" v-model="iptName" /></td>
+            <td>会员邮箱：</td>
+            <td>
+                <input class="form-control" type="text" v-model="iptEmail" />
+            </td>
+            <td>
+                <input type="button" class="ic_shoulei hide_txt png btn btn-primary btn-lg btnShoppingCart" value="查询" @@click="handleGetMembers" />
+                <input type="button" class="ic_shoulei hide_txt png btn btn-primary btn-lg btnShoppingCart" value="清空" @@click="handleClear" />
+            </td>
+        </tr>
+    </table>
+</div>
+<div style="margin-top:50px;">
+
+    <table>
+        <tbody v-for="(member, i) in members">
+            <tr>
+                <td style="text-align: center;">
+                    <span style="border: 1px solid #666666; margin: 5px; font-size: 12px; color: #666666; padding: 2px; width: 5%;">案件名</span>{{member.title}}
+                    <span style="border: 1px solid #666666; margin: 5px; font-size: 12px; color: #666666; padding: 2px; width: 5%;">契約期間</span>{{member.period}}
+                    <span style="border: 1px solid #666666; margin: 5px; font-size: 12px; color: #666666; padding: 2px; width: 5%;">作業場所</span>{{member.area}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table border="0">
+        <tr>
+            <td colspan="5" style="border-bottom:0px !important">
+                <el-pagination v-model:current-page="pagination.pageIndex"
+                               :page-sizes="[12, 24, 36]"
+                               v-model:page-size="pagination.pageSize"
+                               layout="total, sizes, prev, pager, next, jumper"
+                               :total="pagination.totalCount"
+                               @@size-change="handleGetMembers"
+                               @@current-change="handleGetMembers">
+                </el-pagination>
+            </td>
+        </tr>
+    </table>
+</div>
+
+
+@section Scripts{
+
+    <script>
+        createVueApp({
+            /*返回行程数据*/
+            data() {
+                return {
+                    members: [],
+                    pagination: {
+                        pageIndex: 1,
+                        pageSize: 12,
+                        totalCount: 0,
+                    },
+                    Title: '',
+                    Type: '',
+                    ensureDialogVisible: false,
+                    registerForm: {}
+                }
+            },
+            /*页面加载完成后回调下方的行程列表方法*/
+            mounted() {
+                this.handleGetMembers()
+            },
+            /*获取行程列表*/
+            methods: {
+                handleGetMembers() {
+                    this.pagination.Title = this.Title
+                    this.pagination.Type = this.Type
+                    this.getMembers(this.pagination).then(res => {
+                        this.members = res.items
+                        this.pagination.totalCount = res.totalCount
+                    })
+                },
+                /*发送请求*/
+                getMembers(pagination) {
+                    return this.$http.post('/System/ItList', pagination)
+                }
+            }
+        })
+
+    </script>
+}

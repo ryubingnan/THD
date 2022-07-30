@@ -1,0 +1,284 @@
+﻿@{
+    ViewData["Title"] = "娱乐发布";
+}
+@using THD.Web.Models.Play
+@model PlayViewModel
+
+<div class="MyRoomAddDiv">
+    <p>■娱乐发布</p>
+    <form id="theform" asp-area="" asp-controller="System" asp-action="AddPlay" enctype="multipart/form-data" method="post">
+        <input type="hidden" id="Id" name="Id" value="@Model.Id" />
+        <table>
+            <tr>
+                <td>娱乐名称</td>
+                <td colspan="2">
+                    <input asp-for="Title" class="form-control" />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>娱乐类别</td>
+                <td colspan="2">
+                    @{
+                        List<SelectListItem> selectListItems = new List<SelectListItem>();
+
+                        selectListItems.Add(new SelectListItem
+                        {
+                            Text = "请选择",
+                            Value = "",
+                            Selected = true
+                        });
+                        selectListItems.Add(new SelectListItem
+                        {
+                            Text = "烤肉店",
+                            Value = "烤肉店"
+                        });
+                        selectListItems.Add(new SelectListItem
+                        {
+                            Text = "和食店",
+                            Value = "和食店"
+                        });
+                        selectListItems.Add(new SelectListItem
+                        {
+                            Text = "火锅店",
+                            Value = "火锅店"
+                        });
+                        selectListItems.Add(new SelectListItem
+                        {
+                            Text = "拉面店",
+                            Value = "拉面店"
+                        });
+                        selectListItems.Add(new SelectListItem
+                        {
+                            Text = "中华料理店",
+                            Value = "中华料理店"
+                        });
+                        selectListItems.Add(new SelectListItem
+                        {
+                            Text = "寿司店",
+                            Value = "寿司店"
+                        });
+                        selectListItems.Add(new SelectListItem
+                        {
+                            Text = "居酒屋",
+                            Value = "居酒屋"
+                        });
+                        selectListItems.Add(new SelectListItem
+                        {
+                            Text = "洋食店",
+                            Value = "洋食店"
+                        });
+                        selectListItems.Add(new SelectListItem
+                        {
+                            Text = "其他",
+                            Value = "其他"
+                        });
+
+                        if (Model.Id > 0)
+                        {
+                            var item = selectListItems.FirstOrDefault(t => t.Value == Model.Type);
+                            if (item is not null)
+                            {
+                                item.Selected = true;
+                            }
+                        }
+                    }
+
+                    <select asp-for="Type" asp-items="@selectListItems" class="form-control"></select>
+                    <span asp-validation-for="Type" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>娱乐原价</td>
+                <td colspan="2">
+                    <input asp-for="Price" class="form-control" placeholder="请填写数字。" />
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>娱乐现价</td>
+                <td colspan="2">
+                    <input asp-for="PriceNew" class="form-control" placeholder="请填写数字。" />
+                    <span asp-validation-for="PriceNew" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>娱乐特色</td>
+                <td colspan="2">
+                    <textarea asp-for="Features" class="form-control" rows="6"></textarea>
+                    <span asp-validation-for="Features" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>娱乐简介</td>
+                <td colspan="2">
+                    <textarea asp-for="Contents" class="form-control" rows="6"></textarea>
+                    <span asp-validation-for="Contents" class="text-danger"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>娱乐图片1</td>
+                <td>
+                    <img id="Img1" src="@Model.Img1" style="width:354px;height:236px;" />
+                    <input type="hidden" name="Img1" value="@Model.Img1" />
+                    <input type="file" id="FileImg1" name="FileImg1" accept="image/png,image/jpeg,image/gif" onchange="viewImage(this,'Img1')" />
+                </td>
+                <td>
+                    <textarea asp-for="Info1" class="form-control" placeholder="请填写图片1的相关简介。" rows="6" style="width:600px"></textarea>
+                    <span asp-validation-for="Info1" class="text-danger"></span>
+                </td>
+
+            </tr>
+            <tr>
+                <td>娱乐图片2</td>
+                <td>
+                    <img id="Img2" src="@Model.Img2" style="width:354px;height:236px;" />
+                    <input type="hidden" name="Img2" value="@Model.Img2" />
+                    <input type="file" id="FileImg2" name="FileImg2" accept="image/png,image/jpeg,image/gif" onchange="viewImage(this,'Img2')" />
+                </td>
+                <td>
+                    <textarea asp-for="Info2" class="form-control" placeholder="请填写图片2的相关简介。" rows="6" style="width:600px"></textarea>
+                    <span asp-validation-for="Info2" class="text-danger"></span>
+                </td>
+
+            </tr>
+            <tr>
+                <td>娱乐图片3</td>
+                <td>
+                    <img id="Img3" src="@Model.Img3" style="width:354px;height:236px;" />
+                    <input type="hidden" name="Img3" value="@Model.Img3" />
+                    <input type="file" id="FileImg3" name="FileImg3" accept="image/png,image/jpeg,image/gif" onchange="viewImage(this,'Img3')" />
+                </td>
+                <td>
+                    <textarea asp-for="Info3" class="form-control" placeholder="请填写图片3的相关简介。" rows="6" style="width:600px"></textarea>
+                    <span asp-validation-for="Info3" class="text-danger"></span>
+                </td>
+
+            </tr>
+            <tr>
+                <td>娱乐图片4</td>
+                <td>
+                    <img id="Img4" src="@Model.Img4" style="width:354px;height:236px;" />
+                    <input type="hidden" name="Img4" value="@Model.Img4" />
+                    <input type="file" id="FileImg4" name="FileImg4" accept="image/png,image/jpeg,image/gif" onchange="viewImage(this,'Img4')" />
+                </td>
+                <td>
+                    <textarea asp-for="Info4" class="form-control" placeholder="请填写图片4的相关简介。" rows="6" style="width:600px"></textarea>
+                    <span asp-validation-for="Info4" class="text-danger"></span>
+                </td>
+
+            </tr>
+            <tr>
+                <td>娱乐图片5</td>
+                <td>
+                    <img id="Img5" src="@Model.Img5" style="width:354px;height:236px;" />
+                    <input type="hidden" name="Img5" value="@Model.Img5" />
+                    <input type="file" id="FileImg5" name="FileImg5" accept="image/png,image/jpeg,image/gif" onchange="viewImage(this,'Img5')" />
+                </td>
+                <td>
+                    <textarea asp-for="Info5" class="form-control" placeholder="请填写图片5的相关简介。" rows="6" style="width:600px"></textarea>
+                    <span asp-validation-for="Info5" class="text-danger"></span>
+                </td>
+
+            </tr>
+            <tr>
+                <td>娱乐图片6</td>
+                <td>
+                    <img id="Img6" src="@Model.Img6" style="width:354px;height:236px;" />
+                    <input type="hidden" name="Img6" value="@Model.Img6" />
+                    <input type="file" id="FileImg6" name="FileImg6" accept="image/png,image/jpeg,image/gif" onchange="viewImage(this,'Img6')" />
+                </td>
+                <td>
+                    <textarea asp-for="Info6" class="form-control" placeholder="请填写图片6的相关简介。" rows="6" style="width:600px"></textarea>
+                    <span asp-validation-for="Info6" class="text-danger"></span>
+                </td>
+
+            </tr>
+            <tr>
+                <td>娱乐图片7</td>
+                <td>
+                    <img id="Img7" src="@Model.Img7" style="width:354px;height:236px;" />
+                    <input type="hidden" name="Img7" value="@Model.Img7" />
+                    <input type="file" id="FileImg7" name="FileImg7" accept="image/png,image/jpeg,image/gif" onchange="viewImage(this,'Img7')" />
+                </td>
+                <td>
+                    <textarea asp-for="Info7" class="form-control" placeholder="请填写图片7的相关简介。" rows="6" style="width:600px"></textarea>
+                    <span asp-validation-for="Info7" class="text-danger"></span>
+                </td>
+
+            </tr>
+            <tr>
+                <td>娱乐图片8</td>
+                <td>
+                    <img id="Img8" src="@Model.Img8" style="width:354px;height:236px;" />
+                    <input type="hidden" name="Img8" value="@Model.Img8" />
+                    <input type="file" id="FileImg8" name="FileImg8" accept="image/png,image/jpeg,image/gif" onchange="viewImage(this,'Img8')" />
+                </td>
+                <td>
+                    <textarea asp-for="Info8" class="form-control" placeholder="请填写图片8的相关简介。" rows="6" style="width:600px"></textarea>
+                    <span asp-validation-for="Info8" class="text-danger"></span>
+                </td>
+
+            </tr>
+            <tr>
+                <td>娱乐图片9</td>
+                <td>
+                    <img id="Img9" src="@Model.Img9" style="width:354px;height:236px;" />
+                    <input type="hidden" name="Img9" value="@Model.Img9" />
+                    <input type="file" id="FileImg9" name="FileImg9" accept="image/png,image/jpeg,image/gif" onchange="viewImage(this,'Img9')" />
+                </td>
+                <td>
+                    <textarea asp-for="Info9" class="form-control" placeholder="请填写图片9的相关简介。" rows="6" style="width:600px"></textarea>
+                    <span asp-validation-for="Info9" class="text-danger"></span>
+                </td>
+
+            </tr>
+            <tr>
+                <td>娱乐图片10</td>
+                <td>
+                    <img id="Img10" src="@Model.Img10" style="width:354px;height:236px;" />
+                    <input type="hidden" name="Img10" value="@Model.Img10" />
+                    <input type="file" id="FileImg10" name="FileImg10" accept="image/png,image/jpeg,image/gif" onchange="viewImage(this,'Img10')" />
+                </td>
+                <td>
+                    <textarea asp-for="Info10" class="form-control" placeholder="请填写图片10的相关简介。" rows="6" style="width:600px"></textarea>
+                    <span asp-validation-for="Info10" class="text-danger"></span>
+                </td>
+            </tr>
+        </table>
+        <input type="hidden" name="Img11" value="@Model.Img11" />
+        <input type="hidden" name="Img12" value="@Model.Img12" />
+        <input type="hidden" name="Img13" value="@Model.Img13" />
+        <input type="hidden" name="Img14" value="@Model.Img14" />
+        <input type="hidden" name="Img15" value="@Model.Img15" />
+        <input type="hidden" name="Img16" value="@Model.Img16" />
+        <input type="hidden" name="Img17" value="@Model.Img17" />
+        <input type="hidden" name="Img18" value="@Model.Img18" />
+        <input type="hidden" name="Img19" value="@Model.Img19" />
+        <input type="hidden" name="Img20" value="@Model.Img20" />
+        <p>
+            <button class="ic_shoulei hide_txt png btn btn-primary btn-lg margin-left200" type="submit">娱乐产品提交</button>
+            <button class="ic_shoulei hide_txt png btn btn-primary btn-lg marginLeft120px" type="button" onclick="FormReset()">清空</button>
+        </p>
+    </form>
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+    <script>
+        function FormReset() {
+            $("#theform *").not(":button, :submit, :reset, :hidden").val("").removeAttr("checked").removeAttr("src").remove("selected");
+        }
+
+        function viewImage(e, img) {
+            var file = $(e).prop('files')[0];
+            if (file) {
+                var reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onloadend = function (even) {
+                    $('#' + img).attr("src", even.currentTarget.result);
+                }
+            }
+        }
+    </script>
+}
