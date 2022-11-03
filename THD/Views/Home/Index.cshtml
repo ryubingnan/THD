@@ -3,7 +3,7 @@
 }
 <div class="home-wrapper">
     @*banner*@
-    <div class="banner-swiper" style="width: auto; height: 390px; ">
+    <div class="banner-swiper" style="width: auto; height: 890px; ">
         <div class="swiper-wrapper" style="width: auto; height: 390px; ">
             <div class="swiper-slide">
                 <img class="pc-only" src="~/imgs/home/kv_index_01.jpg" alt="" />
@@ -25,7 +25,7 @@
     @*注册框*@
     @using (Html.BeginForm("TechnicianRegister", "Home", FormMethod.Post, new { id = "formSubmit", enctype = "multipart/form-data" }))
     {
-        <!--<div class="reg-wrapper">
+        <div class="reg-wrapper">
             <div class="reg-title">
                 <div class="reg-time">簡単1分</div>
                 <div class="reg-reg">無料登録はこちら</div>
@@ -61,18 +61,18 @@
                     <div class="reg-form-lebel">メールアドレス<br>（会员 ID）</div>
                     <div class="reg-form-input">
                         <input type="text" name="Email" id="Email" placeholder="例え）sample@sample.jp" value="" />
-                        <div class="reg-form-error">メールアドレス（会員ID）を入力してください。</div>-->
-                        @*<div class="reg-form-tip">如果您设置了接收邮件的域指定接收，请设置为您可以接收来自“freelance.fosternet.jp”的邮件。</div>*@
-                    <!--</div>
+                        <div class="reg-form-error">メールアドレス（会員ID）を入力してください。</div>
+                        <div class="reg-form-tip">如果您设置了接收邮件的域指定接收，请设置为您可以接收来自“freelance.fosternet.jp”的邮件。</div>
+                    </div>
                 </div>
                 <div class="reg-form-item">
                     <div class="reg-form-need reg-form-need-yes">必须</div>
                     <div class="reg-form-lebel">パスワード</div>
                     <div class="reg-form-input">
                         <input type="password" name="Password" id="Password" placeholder="" value="" />
-                        <div class="reg-form-error">パスワードを半角英数字8文字以上で入力してください。</div>-->
-                        @*<div class="reg-form-tip">半角字母数字字符：8 个或更多字符。可用于申请项目和查看申请状态。</div>*@
-                    <!--</div>
+                        <div class="reg-form-error">パスワードを半角英数字8文字以上で入力してください。</div>
+                        <div class="reg-form-tip">半角字母数字字符：8 个或更多字符。可用于申请项目和查看申请状态。</div>
+                    </div>
                 </div>
                 <div class="reg-form-item">
                     <div class="reg-form-need reg-form-need-yes">必须</div>
@@ -132,7 +132,7 @@
                 <button id="regBtn1">技術者募集</button>
                 <button id="regBtn2">送信</button>
             </div>
-        </div>-->
+        </div>
     }
    
     
